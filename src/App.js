@@ -1,22 +1,12 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Image } from 'react-native';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Image source={require('./retele.png')} style={{width: 500, height: 500}}/>
       </header>
     </div>
   );
