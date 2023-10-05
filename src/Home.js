@@ -23,7 +23,7 @@ const Home = () => {
           <Image source={require('./facebook.png')} style={{ width: 25, height: 25}}/>
           <p style={{ padding: 3 }}>@Retele</p>
 
-          <p style={{ paddingLeft: 8 }}>•</p>
+          <p style={{ paddingLeft: 7 }}>•</p>
 
         </div>
 
@@ -31,7 +31,7 @@ const Home = () => {
           <Image source={require('./tiktok.png')} style={{ width: 20, height: 20}}/>
           <p style={{ padding: 3, paddingRight: 10 }}>@retele_fi</p>
 
-          <p style={{ paddingRight: 6 }}>•</p>
+          <p style={{ paddingRight: 3 }}>•</p>
 
           <Image source={require('./x.png')} style={{ width: 30, height: 30}}/>
           <p>@retele_fi</p>
