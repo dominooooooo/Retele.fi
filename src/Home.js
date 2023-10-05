@@ -14,7 +14,7 @@ const Home = () => {
           <p style={{ }}>Ota sillä välin somet haltuun:</p>
         </div> */}
 
-        <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'row', fontSize: 'calc(10px + 1vmin)' }}>
+        <div style={{ marginBottom: 12, display: 'flex', alignItems: 'center', flexDirection: 'row', fontSize: 'calc(10px + 1vmin)' }}>
           <Image source={require('./instagram.png')} style={{ width: 20, height: 20 }}/>
           <p style={{ padding: 5, paddingRight: 15 }}>@retele_fi</p>
 
