@@ -16,15 +16,22 @@ const Home = () => {
 
         <div style={{ marginBottom: 12, display: 'flex', alignItems: 'center', flexDirection: 'row', fontSize: 'calc(10px + 1vmin)' }}>
           <Image source={require('./instagram.png')} style={{ width: 20, height: 20 }}/>
-          <p style={{ padding: 5, paddingRight: 15 }}>@retele_fi</p>
+          <p style={{ padding: 5, paddingRight: 10 }}>@retele_fi</p>
+
+          <p style={{ paddingRight: 8 }}>•</p>
 
           <Image source={require('./facebook.png')} style={{ width: 25, height: 25}}/>
           <p style={{ padding: 3 }}>@Retele</p>
+
+          <p style={{ paddingLeft: 8 }}>•</p>
+
         </div>
 
         <div style={{ marginTop: -40, display: 'flex', alignItems: 'center', flexDirection: 'row', fontSize: 'calc(10px + 1vmin)' }}>
           <Image source={require('./tiktok.png')} style={{ width: 20, height: 20}}/>
-          <p style={{ padding: 3, paddingRight: 17 }}>@retele_fi</p>
+          <p style={{ padding: 3, paddingRight: 10 }}>@retele_fi</p>
+
+          <p style={{ paddingRight: 6 }}>•</p>
 
           <Image source={require('./x.png')} style={{ width: 30, height: 30}}/>
           <p>@retele_fi</p>
