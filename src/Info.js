@@ -46,7 +46,7 @@ const Info = () => {
               <span>Miten Retele toimittaa puhelimet?</span>
             </div>
             <div className="div3" style={{ flexDirection: 'row', display: 'flex' }}>
-              <span>Porin alueella asuville onnistuu kotiinkuljetus ja kaupat kasvotusten. muuten toimitamme ne postilla.</span>
+              <span>Porin alueella asuville onnistuu kotiinkuljetus ja kaupat kasvotusten, muuten toimitamme ne postilla.</span>
             </div>
           </div>
 
