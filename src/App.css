@@ -1,3 +1,106 @@
 .App {
-  background-color: #bfe1bf;
+  background-image: url("./img/tausta.png");
+}
+
+.info {
+  text-decoration: none; 
+  font-weight: bold;
+  color: black; 
+  border-radius: 3px;
+  margin: 0 -.25rem;
+  padding: 0 .25rem;
+  cursor: pointer;
+}
+.info:hover { box-shadow: inset 300px 0 0 0 rgba(165, 218, 180, 0.8) }
+
+.box {
+  width: 60vw;
+  height: 70vh;
+  background-color: rgba(165, 218, 180);
+  border-radius: 10px;
+  background-image: url("./img/tausta2.png");
+  background-position: center;
+  background-size: 150%;
+}
+.goback {
+  width: 4%
+}
+.div1 {
+  margin-top: 40px;
+}
+.div2 {
+  margin-top: 30px;
+}
+.div3 {
+  margin-top: 5px;
+}
+.retele {
+  width: 200px;
+}
+.retele2 {
+  margin-top: -58px
+}
+.text {
+  font-size: 1rem;
+}
+.text3 {
+  margin-right: 20%;
+  margin-left: 20%;
+}
+.somet {
+  font-size: 0.85rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 212px;
+}
+.ig {
+  width: 17px;
+}
+.fb {
+  width: 20px;
+}
+.tt {
+  width: 18px;
+}
+.x {
+  width: 25px;
+}
+@media (max-width: 480px) {
+  .box {
+    width: 95vw;
+    height: 80vh;
+    background-size: 300%;
+  }
+  .goback {
+    width: 8%
+  }
+  .retele {
+    width: 150px;
+  }
+  .retele2 {
+    margin-top: -30px
+  }
+  .text {
+    font-size: 0.75rem;
+  }
+  .text3 {
+    margin-right: 2%;
+    margin-left: 2%;
+  }
+  .somet {
+    margin-top: 115px;
+    font-size: 0.65rem;
+  }
+  .ig {
+    width: 15px;
+  }
+  .fb {
+    width: 18px;
+  }
+  .tt {
+    width: 16px;
+  }
+  .x {
+    width: 23px;
+  }
 }
