@@ -29,21 +29,21 @@ const Info = () => {
                 Ostamalla uuden puhelimesi meiltä, säästät hurjasti luontoa ja kukkaroa!</span>
             </div>
             <div className="div1" style={{ fontWeight: 'bold', flexDirection: 'row', display: 'flex' }}>
-              <span>Miten voin myydä iPhoneni Reteleelle?</span>
+              <span>Miten voin myydä puhelimeni Reteleelle?</span>
             </div>
             <div className="div3" style={{ flexDirection: 'row', display: 'flex' }}>
               <span>Voit tarjota omaa iPhoneasi yksityisviestillä Instagramissa tai lähettämällä 
                 sähköpostin osoitteeseen retele.fi@gmail.com. Kerromme 1-3 päivän sisällä hinta-arvion puhelimestasi.</span>
             </div>
             <div className="div2" style={{ fontWeight: 'bold', flexDirection: 'row', display: 'flex' }}>
-              <span>Missä Retele myy kunnostettuja iPhoneja?</span>
+              <span>Missä Retele myy kunnostettuja puhelimia?</span>
             </div>
             <div className="div3" style={{ flexDirection: 'row', display: 'flex' }}>
               <span>Myymme iPhonemme Instagramissa, Tori.fi sekä Facebookissa. Jos sinulla on toive iPhonesta, voit laittaa meille Instagram viestin tai sähköpostin ja kertoa toiveesi. 
                 Koitamme saada sinulle oman haluamasi iPhonen kilpailukykyiseen hintaan!</span>
             </div>
             <div className="div2" style={{ fontWeight: 'bold', flexDirection: 'row', display: 'flex' }}>
-              <span>Miten Retele toimittaa iPhonet?</span>
+              <span>Miten Retele toimittaa puhelimet?</span>
             </div>
             <div className="div3" style={{ flexDirection: 'row', display: 'flex' }}>
               <span>Porin alueella asuville onnistuu kotiinkuljetus ja kaupat kasvotusten. muuten toimitamme ne postilla.</span>
