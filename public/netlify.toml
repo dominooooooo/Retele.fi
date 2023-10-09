@@ -1,4 +1,9 @@
 [[redirects]]
 from = "/*"
-to = "/src/NotFound.js"
+to = "/"
+status = 200
+
+[[redirects]]
+from = "/*"
+to = "/src/NotFound"
 status = 404
