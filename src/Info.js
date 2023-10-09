@@ -48,9 +48,7 @@ const Info = () => {
             </div>
           </div>
           </div>
-
           <div className="somet" style={{ display: 'flex', opacity: 0.7 }}>
-      
               <img className="ig" src={instagram} alt="Instagram" />
               <p style={{ padding: 5, paddingRight: 10 }}>@retele_fi</p>
 
@@ -68,7 +66,6 @@ const Info = () => {
 
               <img className="x" src={x} alt="X/Twitter" />
               <p>@retele_fi</p>
-           
             </div>
         </div>
     </div>   
