@@ -7,17 +7,18 @@ const Home = () => {
   return (
       <div style={{ minHeight: '100vh', flexDirection: 'column', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
 
-        <div style={{ marginBottom: 10, display: 'flex', alignItems: 'center', flexDirection: 'row', fontSize: 'calc(10px + 1vmin)', fontFamily: 'Poppins, sans-serif' }}>
+        <div style={{ marginBottom: -10, display: 'flex', alignItems: 'center', flexDirection: 'row', fontSize: 'calc(10px + 1vmin)', fontFamily: 'Poppins, sans-serif' }}>
           <Link className="info" to="/tietoa">
             <p className="info">Mikä on Retele?</p>
           </Link>
         </div>
 
         <div style={{ flexDirection: 'row' }}>
-          <Image className="retelemain" source={require('./img/retele.webp')} style={{ height: 120, width: 370 }}/>
+          <Image className="retelemain" source={require('./img/retele.webp')} style={{ height: 250, width: 500 }}/>
         </div>
 
-        <div style={{ marginBottom: 12, display: 'flex', alignItems: 'center', flexDirection: 'row', fontSize: 'calc(10px + 1vmin)' }}>
+      <div style={{ marginTop: -60 } }>
+      <div style={{ marginBottom: 12, display: 'flex', alignItems: 'center', flexDirection: 'row', fontSize: 'calc(10px + 1vmin)' } }>
           <Image source={require('./img/instagram.png')} style={{ width: 20, height: 20 }}/>
           <p style={{ padding: 5, paddingRight: 10 }}>@retele_fi</p>
 
@@ -30,7 +31,7 @@ const Home = () => {
 
         </div>
 
-        <div style={{ marginTop: -40, display: 'flex', alignItems: 'center', flexDirection: 'row', fontSize: 'calc(10px + 1vmin)' }}>
+        <div style={{ marginTop: -40, display: 'flex', alignItems: 'center', flexDirection: 'row', fontSize: 'calc(10px + 1vmin)' }} >
           <Image source={require('./img/tiktok.png')} style={{ width: 20, height: 20}}/>
           <p style={{ padding: 3, paddingRight: 10 }}>@retele_fi</p>
 
@@ -39,6 +40,7 @@ const Home = () => {
           <Image source={require('./img/x.png')} style={{ width: 30, height: 30}}/>
           <p>@retele_fi</p>
         </div>
+      </div>
     </div>
   );
 }
