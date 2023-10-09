@@ -21,6 +21,7 @@
   background-image: url("./img/tausta2.png");
   background-position: center;
   background-size: 150%;
+  position: relative;
 }
 .goback {
   width: 4%
@@ -49,21 +50,27 @@
 }
 .somet {
   font-size: 0.85rem;
+  position: absolute;
+  bottom: -10px;
+  width: 100%;
   align-items: center;
   justify-content: center;
-  margin-top: 212px;
 }
 .ig {
   width: 17px;
+  height: 17px;
 }
 .fb {
   width: 20px;
+  height: 20px;
 }
 .tt {
   width: 18px;
+  height: 18px;
 }
 .x {
   width: 25px;
+  height: 25px;
 }
 @media (max-width: 480px) {
   .box {

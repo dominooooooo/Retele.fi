@@ -13,7 +13,6 @@ const Info = () => {
     <div className="div" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div className="box">
           <div className="bg">
-            
             <Link to="/">
               <img className="goback" src={goback} draggable="false" alt="Navigation Button" style={{ marginTop: '1%', marginInline: '1%' }} />
             </Link>
@@ -21,12 +20,11 @@ const Info = () => {
             <div className="retele2" style={{ textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <img className="retele" src={retele} draggable="false" alt="Retele" />
             </div>
-
           <div className="text" style={{ textAlign: 'start'}}>
             <div className="text2" style={{ margin: 10 }} >
             <div className="text3" style={{ marginTop: 20, textAlign: 'center', flexDirection: 'row', justifyContent: 'center' }}>
-              <span>Suomalainen toiminimiyritys, joka ostaa iPhoneja, kunnostaa ne ja jälleenmyy järkevään hintaan. 
-                Ostamalla uuden puhelimesi meiltä, säästät hurjasti luontoa ja kukkaroa!</span>
+              <span>Suomalainen yritys, joka ostaa käytettyjä iPhoneja, kunnostaa ne ja jälleenmyy järkevään hintaan. 
+                Ostamalla uuden puhelimesi meiltä, säästät hurjasti luontoa sekä kukkaroa!</span>
             </div>
             <div className="div1" style={{ fontWeight: 'bold', flexDirection: 'row', display: 'flex' }}>
               <span>Miten voin myydä puhelimeni Reteleelle?</span>
@@ -49,8 +47,10 @@ const Info = () => {
               <span>Porin alueella asuville onnistuu kotiinkuljetus ja kaupat kasvotusten, muuten toimitamme ne postilla.</span>
             </div>
           </div>
+          </div>
 
-            <div className="somet" style={{ display: 'flex', flexDirection: 'row', opacity: 0.7 }}>
+          <div className="somet" style={{ display: 'flex', opacity: 0.7 }}>
+      
               <img className="ig" src={instagram} alt="Instagram" />
               <p style={{ padding: 5, paddingRight: 10 }}>@retele_fi</p>
 
@@ -68,9 +68,8 @@ const Info = () => {
 
               <img className="x" src={x} alt="X/Twitter" />
               <p>@retele_fi</p>
+           
             </div>
-
-          </div>
         </div>
     </div>   
   );
