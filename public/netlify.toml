@@ -1,0 +1,4 @@
+[[redirects]]
+from = "/*"
+to = "/src/NotFound.js"
+status = 404
