@@ -14,7 +14,7 @@ const Home = () => {
         </div>
 
         <div style={{ flexDirection: 'row' }}>
-          <Image className="retelemain" source={require('./img/retele.png')} style={{ height: 120, width: 370 }}/>
+          <Image className="retelemain" source={require('./img/retele.webp')} style={{ height: 120, width: 370 }}/>
         </div>
 
         <div style={{ marginBottom: 12, display: 'flex', alignItems: 'center', flexDirection: 'row', fontSize: 'calc(10px + 1vmin)' }}>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './App.css';
 import goback from './img/goback.png';
-import retele from './img/retele.png';
+import retele from './img/retele.webp';
 import instagram from './img/instagram.png';
 import facebook from './img/facebook.png';
 import tiktok from './img/tiktok.png';

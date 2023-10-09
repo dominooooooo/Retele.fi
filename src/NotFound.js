@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import notfound from './img/404.png';
+import notfound from './img/404.webp';
 
 const NotFound = () => {
     return (
