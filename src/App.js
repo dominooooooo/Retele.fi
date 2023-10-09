@@ -1,9 +1,9 @@
 import './App.css';
 import './index.css';
-import Home from './Home'
-import Info from './Info'
-import NotFound from './NotFound'
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import Home from './Home';
+import Info from './Info';
+import NotFound from './NotFound';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 function App() {
   return (
