@@ -47,6 +47,7 @@
 .text3 {
   margin-right: 20%;
   margin-left: 20%;
+  margin-top: -120px;
 }
 .somet {
   font-size: 0.85rem;
@@ -81,10 +82,10 @@
     width: 8%
   }
   .retele {
-    width: 150px;
+    width: 230px;
   }
   .retele2 {
-    margin-top: -30px
+    margin-top: -125px
   }
   .text {
     font-size: 0.75rem;
@@ -92,6 +93,7 @@
   .text3 {
     margin-right: 2%;
     margin-left: 2%;
+    margin-top: -70px;
   }
   .somet {
     font-size: 0.65rem;

@@ -22,7 +22,7 @@ const Info = () => {
             </div>
           <div className="text" style={{ textAlign: 'start'}}>
             <div className="text2" style={{ margin: 10 }} >
-            <div className="text3" style={{ marginTop: -120, textAlign: 'center', flexDirection: 'row', justifyContent: 'center' }}>
+            <div className="text3" style={{ textAlign: 'center', flexDirection: 'row', justifyContent: 'center' }}>
               <span>Suomalainen yritys, joka ostaa käytettyjä iPhoneja, kunnostaa ne ja jälleenmyy järkevään hintaan. 
                 Ostamalla uuden puhelimesi meiltä, säästät hurjasti luontoa sekä kukkaroa!</span>
             </div>
