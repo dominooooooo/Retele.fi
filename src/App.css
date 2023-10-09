@@ -68,6 +68,9 @@
 .x {
   width: 25px;
 }
+.notfound {
+  width: 370px
+}
 @media (max-width: 480px) {
   .box {
     width: 95vw;
