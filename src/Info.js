@@ -14,7 +14,7 @@ const Info = () => {
         <div className="box">
           <div className="bg">
             <Link to="/">
-              <img className="goback" src={goback} draggable="false" alt="Navigation Button" style={{ marginTop: '1%', marginInline: '1%' }} />
+              <img className="goback" src={goback} draggable="false" alt="Tietoa" style={{ marginTop: '1%', marginInline: '1%' }} />
             </Link>
           </div>
             <div className="retele2" style={{ textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
