@@ -15,7 +15,7 @@ const Home = () => {
         </div>
 
         <div style={{ flexDirection: 'row' }}>
-          <img src={retele} draggable="false" alt="Retele" style={{ width: 450 }}/>
+          <img src={retele} className="logo" draggable="false" alt="Retele" style={{ }}/>
         </div>
 
       <div style={{ marginTop: 5 } }>

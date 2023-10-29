@@ -2,6 +2,10 @@
   background-image: url("./img/tausta.webp");
 }
 
+.logo {
+  width: 450px;
+}
+
 .info {
   text-decoration: none; 
   font-weight: bold;
@@ -27,7 +31,7 @@
   width: 4%
 }
 .div1 {
-  margin-top: 40px;
+  margin-top: 50px;
 }
 .div2 {
   margin-top: 30px;
@@ -37,9 +41,7 @@
 }
 .retele {
   width: 350px;
-}
-.retele2 {
-  margin-top: -190px
+  margin-top: -50px;
 }
 .text {
   font-size: 1rem;
@@ -47,7 +49,6 @@
 .text3 {
   margin-right: 20%;
   margin-left: 20%;
-  margin-top: -120px;
 }
 .somet {
   font-size: 0.85rem;
@@ -73,6 +74,9 @@
   width: 370px
 }
 @media (max-width: 480px) {
+  .logo {
+    width: 330px;
+  }
   .box {
     width: 95vw;
     height: 80vh;
@@ -83,6 +87,7 @@
   }
   .retele {
     width: 230px;
+    margin-top: 90px
   }
   .retele2 {
     margin-top: -125px
@@ -93,7 +98,7 @@
   .text3 {
     margin-right: 2%;
     margin-left: 2%;
-    margin-top: -82px;
+    margin-top: 2px;
   }
   .somet {
     font-size: 0.65rem;
