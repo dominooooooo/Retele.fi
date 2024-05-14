@@ -14,7 +14,7 @@ export default function Footer() {
             <p className="font-medium text-md">Y-tunnus: 3390989-4</p>
             <p className="font-medium text-md">Sähköposti: tuki@retele.fi</p>
           </div>
-          <div className="w-full lg:w-auto text-center flex flex-col items-center">
+          <div className="w-full lg:w-auto text-center flex flex-col items-center space-y-1">
             <p className="font-black text-xl mb-2">LINKKEJÄ</p>
             <Link
               color="foreground"
