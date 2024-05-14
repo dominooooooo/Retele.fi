@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.shiny-green-button {
+    background: linear-gradient(145deg, rgba(63, 191, 63, 0.75), rgba(24, 150, 24, 0.75));
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Simulates a shiny border */
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); /* Slight text shadow for depth */
+}
+  
+  .shiny-green-button:hover {
+    background: linear-gradient(145deg, rgba(24, 150, 24, 0.85), rgba(63, 191, 63, 0.85));
+    transform: scale(1.05); /* Slightly enlarges button on hover */
+    transition: all 0.3s ease-in-out;
+}
