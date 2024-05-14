@@ -14,7 +14,7 @@ export default function Home() {
       <div className="mt-10">
         <p className="text-center italic text-wrap mx-4 lg:mx-96">
           "Retele on vuonna 2023 perustettu yritys, joka huoltaa, ostaa sekä
-          myy puhelimia. Yrityksen perusti 16-vuotias Porilainen, joka hoitaa yrityksen asioita edelleen itse ja
+          myy puhelimia. Yrityksen perusti 16-vuotias porilainen, joka hoitaa yrityksen asioita edelleen itse ja
           yksin. Retele huoltaa, myy ja ostaa tällä hetkellä vain iPhone
           -puhelimia. Kiva, että pääsit tänne asti!"
         </p>
