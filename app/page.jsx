@@ -30,7 +30,7 @@ export default function Home() {
               <div className="mt-7 grid grid-rows-1 md:grid-cols-2 gap-3 max-w-4xl mx-auto">
                 <div className="flex flex-col space-y-3">
                   <div className="flex flex-row items-center">
-                    <div className="bg-gray-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl">
+                    <div className="bg-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl">
                       <RiMoneyEuroCircleLine size={35} />
                     </div>
                     <p className="font-semibold ml-5">
@@ -41,7 +41,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col space-y-3">
                   <div className="flex flex-row items-center">
-                    <div className="bg-gray-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl">
+                    <div className="bg-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl">
                       <FaStar size={29} />
                     </div>
                     <div className="flex flex-col ml-5">
@@ -61,7 +61,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col space-y-3">
                   <div className="flex flex-row items-center">
-                    <div className="bg-gray-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl">
+                    <div className="bg-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl">
                       <IoDiamondOutline size={32} />
                     </div>
                     <p className="font-semibold ml-5">12 kuukauden takuu</p>
@@ -72,7 +72,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col space-y-3">
                   <div className="flex flex-row items-center">
-                    <div className="bg-gray-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl">
+                    <div className="bg-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl">
                       <FaUserTie size={28} />
                     </div>
                     <p className="font-semibold ml-5">Tuet nuorta yrittäjää</p>
