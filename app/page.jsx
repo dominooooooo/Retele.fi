@@ -83,9 +83,9 @@ export default function Home() {
           </div>
         </div>
         <div className="flex flex-row mt-10 justify-center gap-2 lg:gap-12">
-          <CustomCard title={"Osta"} image={Buy} />
-          <CustomCard title={"Korjaa"} image={Fix} />
-          <CustomCard title={"Myy"} image={Sell} />
+          <CustomCard title={"Osta"} image={Buy} link={"/kauppa"} />
+          <CustomCard title={"Huolla"} image={Fix} link={"/huolla"} />
+          <CustomCard title={"Myy"} image={Sell} link={"/myy"} />
         </div>
         {/* <div className="flex w-full justify-start items-center mt-10">
           <p className="font-bold text-2xl ml-4 sm:ml-8 md:ml-16 lg:ml-96">Ajankohtaista</p>

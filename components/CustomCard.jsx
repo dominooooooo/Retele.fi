@@ -1,13 +1,15 @@
-import { Card, CardBody, CardFooter } from "@nextui-org/react";
+import { Card, CardBody, CardFooter, Link } from "@nextui-org/react";
 import Image from 'next/image'
 
 const CustomCard = ({
   title,
   image,
   otherStyles,
+  link,
 }) => {
   return (
-    <Card shadow="md" className={`${otherStyles} transform transition duration-500 hover:scale-105 cursor-pointer bg-white`}>
+  <Link href={link}>
+    <Card shadow="md" isPressable className={`${otherStyles} transform transition duration-500 hover:scale-105 cursor-pointer bg-white`}>
       <CardBody>
       <Image
         src={image}
@@ -22,6 +24,7 @@ const CustomCard = ({
         <b className="text-lg">{title}</b>
       </CardFooter>
     </Card>
+  </Link>
   );
 };
 
