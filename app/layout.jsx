@@ -17,6 +17,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fi" style={{ height: "100%" }} className={leaguespartan.className}>
+      <head>
+        <meta name="theme-color" content="#FFFFFF"/>
+      </head>
       <body style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
         <NavbarMenu />
         <main style={{ flex: "1 0 auto" }}>

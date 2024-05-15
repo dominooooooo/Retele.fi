@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react";
+import { useState } from "react";
 import CustomButton from "@/components/CustomButton";
 import { IoPricetagOutline } from "react-icons/io5";
 import { FiPlus } from "react-icons/fi";

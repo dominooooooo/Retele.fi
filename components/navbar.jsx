@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  Link,
-} from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link } from "@nextui-org/react";
 import Image from "next/image";
 import ReteleLogo from "@/public/retele.png";
 import { FaInstagram, FaTiktok } from "react-icons/fa6";
@@ -28,9 +22,7 @@ export default function NavbarMenu() {
       <Navbar
         isBordered
         position="static"
-        style={{
-          backgroundColor: "#FFFFFF",
-        }}
+        style={{ backgroundColor: "#FFFFFF" }}
         classNames={{
           item: [
             "flex",

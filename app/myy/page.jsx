@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react";
+import { useState } from "react";
 import CustomButton from "@/components/CustomButton";
 import { FaInfo } from "react-icons/fa6";
 import TakeContact from "@/components/TakeContact";
