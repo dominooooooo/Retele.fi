@@ -35,7 +35,7 @@ const ReviewsMarquee = () => {
     {
       name: "Marjo Nurmi",
       description: "Hyvä, nopea ja asiallinen palvelu. Suosittelen!",
-      title: "Homma sujui sovitusti ja erittäin…",
+      title: "Hyvä",
       stars: 5,
       date: "24. lokakuuta 2023",
     },

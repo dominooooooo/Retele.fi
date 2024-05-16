@@ -11,7 +11,7 @@ const leaguespartan = League_Spartan({
 
 export const metadata = {
   title: "RETELE — huolla & osta puhelin",
-  description: "Tingi huomattavasti hinnassa mutta älä laadussa",
+  description: "Tingi huomattavasti hinnassa, mutta älä laadussa",
 };
 
 export default function RootLayout({ children }) {
