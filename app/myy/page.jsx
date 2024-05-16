@@ -31,7 +31,7 @@ export default function Myy() {
             </li>
             <li className="px-3 lg:px-2 flex text-left items-center mt-1 lg:mt-2">
               <FaCheck className="w-7 h-7 sm:w-6 sm:h-6 mr-3 lg:mr-3" />
-              <span>Tarkistamme kaikkien puhelimien toimivuuden ennen ostoa. </span>
+              <span>Tarkistamme puhelimen toimivuuden ennen ostoa. </span>
             </li>
           </div>
         </div>
