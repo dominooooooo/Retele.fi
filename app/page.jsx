@@ -65,7 +65,7 @@ export default function Home() {
                     <div className="bg-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl">
                       <IoDiamondOutline size={32} />
                     </div>
-                    <p className="font-semibold ml-5">12 kuukauden takuu</p>
+                    <p className="font-semibold ml-5">Kuukauden takuu</p>
                   </div>
                   <div className="lg:hidden">
                     <Divider orientation="horizontal" />

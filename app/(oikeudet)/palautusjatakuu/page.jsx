@@ -9,7 +9,7 @@ export default function Return() {
         </p>
 
         <p className="font-black text-2xl mt-20">TUOTTEEN TAKUU</p>
-        <p className="mt-10 text-wrap mx-5 lg:mx-72">Jokaisella tuotteellamme on <b>12 kuukauden</b> takuu. Oikeus alkaa siitä kun tuote on maksettu. Takuu lukee kuitissa.
+        <p className="mt-10 text-wrap mx-5 lg:mx-72">Jokaisella tuotteellamme on <b>kuukauden</b> takuu. Oikeus alkaa siitä kun tuote on maksettu. Takuu lukee kuitissa.
         Takuuseen kuuluu nopea laitteen korjaus jos vian on todettu johtuvan myyjästä. Jos emme saa laitettasi korjattua, korvaamme sen vastaavalla laitteella, jos niitä on varastossa.
         Muussa tapauksessa korvaamme rahallisesti.
         Huomaathan että laitteen korjauspalvelussa takuu on voimassa vain sille osalle, joka on vaihdettu.
