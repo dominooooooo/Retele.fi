@@ -9,7 +9,7 @@ const CustomCard = ({
 }) => {
   return (
   <Link href={link}>
-    <Card shadow="md" isPressable className={`${otherStyles} transform transition duration-500 hover:scale-105 cursor-pointer bg-white`}>
+    <Card shadow="lg" isPressable className={`${otherStyles} transform transition duration-500 hover:scale-105 cursor-pointer bg-white border-1`}>
       <CardBody>
       <Image
         src={image}
