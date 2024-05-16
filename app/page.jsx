@@ -3,6 +3,7 @@ import { RiMoneyEuroCircleLine } from "react-icons/ri";
 import { FaStar, FaInstagram, FaUserTie, FaTiktok } from "react-icons/fa";
 import CustomCard from "@/components/CustomCard";
 import { IoDiamondOutline } from "react-icons/io5";
+import ReviewsMarquee from "@/components/ReviewsMarquee";
 import { GiCheckMark } from "react-icons/gi";
 import Buy from "@/public/buy.png";
 import Fix from "@/public/fix.png";
@@ -90,7 +91,14 @@ export default function Home() {
         {/* <div className="flex w-full justify-start items-center mt-10">
           <p className="font-bold text-2xl ml-4 sm:ml-8 md:ml-16 lg:ml-96">Ajankohtaista</p>
         </div> */}
-        <div className="mt-10 mb-10">
+        <div className="mt-12">
+          <p className="text-center font-bold text-2xl">Asiakaskokemuksia</p>
+            <p className="text-center">Lue kaikki arvostelut <Link underline="always" className="cursor-pointer">täältä</Link></p>
+          <div className="mt-1">
+            <ReviewsMarquee />
+          </div>
+        </div>
+        <div className="mt-12 mb-10">
           <p className="text-center font-bold text-2xl">Seuraa somessa</p>
           <div className="flex flex-row justify-center mt-5 gap-6 lg:gap-10">
             <a href="https://www.instagram.com/retelephones/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">

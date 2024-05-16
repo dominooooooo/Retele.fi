@@ -21,7 +21,6 @@ export default function NavbarMenu() {
     <>
       <Navbar
         isBordered
-        position="static"
         style={{ backgroundColor: "#FFFFFF" }}
         classNames={{
           item: [
