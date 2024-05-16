@@ -6,7 +6,7 @@ import { IoPricetagOutline } from "react-icons/io5";
 import { FiPlus } from "react-icons/fi";
 import TakeContact from "@/components/TakeContact";
 import { IoLocationOutline } from "react-icons/io5";
-import { BiSolidEnvelope } from "react-icons/bi";
+import { BsMailbox } from "react-icons/bs";
 
 export default function Korjauta() {
   const [isTakeContactOpen, setIsTakeContactOpen] = useState(false);
@@ -32,7 +32,7 @@ export default function Korjauta() {
               </span>
             </li>
             <li className="px-2 flex text-left items-center mt-1 lg:mt-2">
-              <BiSolidEnvelope className="w-6 h-6 mr-3 lg:mr-3" />
+              <BsMailbox className="w-6 h-6 mr-3 lg:mr-3" />
               <span>Puhelimen voi myös postittaa.</span>
             </li>
           </div>
