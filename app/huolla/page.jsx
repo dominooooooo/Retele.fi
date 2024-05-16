@@ -1,34 +1,56 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 import CustomButton from "@/components/CustomButton";
 import { IoPricetagOutline } from "react-icons/io5";
 import { FiPlus } from "react-icons/fi";
 import TakeContact from "@/components/TakeContact";
+import { IoLocationOutline } from "react-icons/io5";
+import { BiSolidEnvelope } from "react-icons/bi";
 
 export default function Korjauta() {
   const [isTakeContactOpen, setIsTakeContactOpen] = useState(false);
 
-  const openTakeContact= () => {
+  const openTakeContact = () => {
     setIsTakeContactOpen(true);
   };
   const closeTakeContact = () => {
     setIsTakeContactOpen(false);
   };
-  
+
   return (
     <>
       <div className="text-center mt-12">
         <p className="font-black text-2xl">HUOLLA PUHELIMESI</p>
-        <p className="text-wrap mx-5 lg:mx-96 mt-2">
-          Suoritamme kaikki huollot Porissa. Puhelimen tuonti Poriin tai haku Porin alueelta onnistuu. 
-          Puhelimen voi myös postittaa. Kysy huollosta painamalla alla painiketta "HUOLLA PUHELIMESI" ja ota yhteyttä. <b>Vastaamme kaikkiin
-          yhteydenottoihin klo 12-22 välillä tunnin kuluessa ja saat tarkan hinnan yhteydenotossasi!</b>
-        </p>
-        <div className="flex justify-center mt-10">
+        <div className="mx-auto mt-2 max-w-screen-lg flex justify-center">
+          <div className="w-full lg:w-2/3 mx-2">
+            <li className="px-1 flex text-left items-center">
+              <IoLocationOutline className="w-14 h-14 sm:w-7 sm:h-7 mr-3 lg:mr-3" />
+              <span>
+                Suoritamme kaikki huollot Porissa - puhelimen tuonti Poriin tai
+                haku Porin alueelta onnistuu.
+              </span>
+            </li>
+            <li className="px-2 flex text-left items-center mt-1 lg:mt-2">
+              <BiSolidEnvelope className="w-6 h-6 mr-3 lg:mr-3" />
+              <span>Puhelimen voi myös postittaa.</span>
+            </li>
+          </div>
+        </div>
+        <div className="mt-10 lg:mx-96">
+          <p className="text-center">
+            Kysy huollosta painamalla alla olevaa "HUOLLA PUHELIMESI"
+            -painiketta ja ota yhteyttä.{" "}
+            <b>
+              Vastaamme kaikkiin yhteydenottoihin klo 12-22 välillä tunnin
+              kuluessa ja saat tarkan hinnan yhteydenotossasi!
+            </b>
+          </p>
+        </div>
+        <div className="flex justify-center mt-5">
           <div className="box-content h-auto lg:w-1/2 w-full mx-2 border-2 border-black border-dashed rounded-2xl relative">
             <div className="absolute -top-5 left-2 transform -translate-x-1/2 bg-white">
-              <IoPricetagOutline className="w-10 h-10 text-[#37AB07]" />
+              <IoPricetagOutline className="w-9 h-9 text-[#37AB07]" />
             </div>
             <p className="text-xl font-bold text-center mt-4">HUOLLOT</p>
             <p className="text-base mx-2 lg:mx-7 mt-3">
@@ -101,7 +123,11 @@ export default function Korjauta() {
             </div>
           </div>
         </div>
-        <CustomButton title={"HUOLLA PUHELIMESI"} otherStyles={"mt-10 mb-14"} onPress={openTakeContact} />
+        <CustomButton
+          title={"HUOLLA PUHELIMESI"}
+          otherStyles={"mt-10 mb-14"}
+          onPress={openTakeContact}
+        />
       </div>
       {isTakeContactOpen && (
         <TakeContact

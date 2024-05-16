@@ -93,7 +93,7 @@ export default function Home() {
         </div> */}
         <div className="mt-12">
           <p className="text-center font-bold text-2xl">Asiakaskokemuksia</p>
-            <p className="text-center">Lue kaikki arvostelut <Link isExternal href="https://fi.trustpilot.com/review/retele.fi" underline="always" className="cursor-pointer">täältä</Link></p>
+            <p className="text-center">Lue kaikki arvostelumme <Link isExternal href="https://fi.trustpilot.com/review/retele.fi" underline="always" className="cursor-pointer">täältä</Link></p>
           <div className="mt-1">
             <ReviewsMarquee />
           </div>

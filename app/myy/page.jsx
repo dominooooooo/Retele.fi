@@ -4,6 +4,8 @@ import { useState } from "react";
 import CustomButton from "@/components/CustomButton";
 import { FaInfo } from "react-icons/fa6";
 import TakeContact from "@/components/TakeContact";
+import { IoPhonePortraitOutline } from "react-icons/io5";
+import { FaCheck } from "react-icons/fa";
 
 export default function Myy() {
   const [isTakeContactOpen, setIsTakeContactOpen] = useState(false);
@@ -19,14 +21,31 @@ export default function Myy() {
     <>
       <div className="text-center mt-12">
         <p className="font-black text-2xl">MYY PUHELIMESI</p>
-        <p className="text-wrap mx-5 lg:mx-96 mt-2">
-          Ostamme tällä hetkellä vain <b>iPhone -puhelimia</b>. Tarkistamme
-          kaikkien puhelimien toimivuuden ennen ostoa. Kysy myynnistä painamalla
-          alla painiketta "MYY PUHELIMESI" ja ota yhteyttä. <b>Vastaamme kaikkiin yhteydenottoihin 
-          klo 12-22 välillä tunnin kuluessa ja saat hinnan, jonka voimme puhelimestasi maksaa!
-          </b>
-        </p>
-        <div className="flex justify-center mt-10">
+        <div className="mx-auto mt-2 max-w-screen-lg flex justify-center">
+          <div className="w-full lg:w-2/3 mx-2">
+            <li className="px-1 flex text-left items-center">
+              <IoPhonePortraitOutline className="w-8 h-8 sm:w-7 sm:h-7 mr-3" />
+              <span>
+                Ostamme tällä hetkellä vain <b>iPhone -puhelimia</b>.
+              </span>
+            </li>
+            <li className="px-3 lg:px-2 flex text-left items-center mt-1 lg:mt-2">
+              <FaCheck className="w-7 h-7 sm:w-6 sm:h-6 mr-3 lg:mr-3" />
+              <span>Tarkistamme kaikkien puhelimien toimivuuden ennen ostoa. </span>
+            </li>
+          </div>
+        </div>
+        <div className="mt-10 lg:mx-96">
+          <p className="text-center">
+            Kysy myynnistä painamalla
+            alla painiketta "MYY PUHELIMESI" ja ota yhteyttä.{" "}
+            <b>
+              Vastaamme kaikkiin yhteydenottoihin 
+              klo 12-22 välillä tunnin kuluessa ja saat hinnan, jonka voimme puhelimestasi maksaa!
+            </b>
+          </p>
+        </div>
+        <div className="flex justify-center mt-5">
           <div className="box-content h-auto lg:w-1/2 w-full mx-2 border-2 border-black border-dashed rounded-2xl relative">
             <div className="absolute -top-5 left-2 transform -translate-x-1/2 bg-white">
               <FaInfo className="w-9 h-9 text-[#37AB07]" />
