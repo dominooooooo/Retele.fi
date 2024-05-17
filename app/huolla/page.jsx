@@ -27,8 +27,7 @@ export default function Korjauta() {
             <li className="px-1 flex text-left items-center">
               <IoLocationOutline className="w-14 h-14 sm:w-7 sm:h-7 mr-3 lg:mr-3" />
               <span>
-                Suoritamme kaikki huollot Porissa - puhelimen tuonti Poriin tai
-                haku Porin alueelta onnistuu.
+                Suoritamme kaikki huollot Porissa. Puhelimen tuonti tai haku Porin alueella onnistuu.
               </span>
             </li>
             <li className="px-2 flex text-left items-center mt-1 lg:mt-2">
