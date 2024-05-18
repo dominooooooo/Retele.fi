@@ -1,30 +1,15 @@
-import axios from "axios";
+import { useRouter } from "next/navigation";
 import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
-import Stripe from "stripe";
 
-const PricingCard = ({ product, price }) => {
-  const handleSubscription = async (e) => {
-    try {
-      const response = await axios.post("/api/payment", {
-        productId: product.id,
-      });
-      const { sessionId } = response.data;
+const ProductCard = ({ product, price }) => {
+  const router = useRouter();
 
-      const stripe = Stripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
-      const { error } = await stripe.redirectToCheckout({
-        sessionId: sessionId,
-      });
-
-      if (error) {
-        console.error("Error redirecting to checkout:", error);
-      }
-    } catch (error) {
-      console.error("Error initiating subscription:", error);
-    }
+  const handleNavigation = () => {
+    router.push(`/kauppa/${product.id}`);
   };
 
   return (
-    <Card shadow="sm" isPressable onPress={() => handleSubscription(product)} className="bg-white">
+    <Card shadow="sm" isPressable onPress={handleNavigation} className="bg-white">
       <CardBody>
         <Image
           shadow="sm"
@@ -43,4 +28,4 @@ const PricingCard = ({ product, price }) => {
   );
 };
 
-export default PricingCard;
+export default ProductCard;

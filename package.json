@@ -11,6 +11,7 @@
   "dependencies": {
     "@netlify/plugin-nextjs": "^5.2.2",
     "@nextui-org/react": "^2.2.10",
+    "@stripe/stripe-js": "^3.4.0",
     "axios": "^1.6.8",
     "framer-motion": "^11.0.14",
     "next": "^14.2.3",

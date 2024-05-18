@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import PricingCard from "@/components/productCard";
+import ProductCard from "@/components/ProductCard";
 import axios from "axios";
 import { Divider } from "@nextui-org/react";
 import Image from "next/image";
@@ -32,9 +32,7 @@ export default function Shop() {
   return (
     <>
       <div className="font-black text-2xl text-center mt-12">KAUPPA</div>
-
-      <p className="text-center mt-3">Puhelimia tulossa pian myyntiin!</p>
-      {/* {isLoading ? (
+      {isLoading ? (
         <div className="flex justify-center items-center mt-8">
           <Image unoptimized src="/loading.gif" alt="Loading" width={160} height={160} />
         </div>
@@ -45,7 +43,7 @@ export default function Shop() {
               (price) => price.product === product.id
             );
             return (
-              <PricingCard
+              <ProductCard
                 key={product.id}
                 product={product}
                 price={productPrice}
@@ -53,7 +51,7 @@ export default function Shop() {
             );
           })}
         </div>
-      )} */}
+      )}
       <div className="flex justify-center items-center my-12 mx-auto max-w-xs">
         <Divider orientation="horizontal" className="w-full" />
       </div>
