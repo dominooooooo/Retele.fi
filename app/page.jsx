@@ -105,7 +105,7 @@ export default function Home() {
               <FaInstagram className="text-black text-2xl" />
               <span className="text-black font-bold ml-2">@retelephones</span>
             </a>
-            <a href="https://https://www.tiktok.com/@retelephones/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+            <a href="https://www.tiktok.com/@retelephones/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
               <FaTiktok className="text-black text-2xl" />
               <span className="text-black font-bold ml-2">@retelephones</span>
             </a>
