@@ -26,7 +26,7 @@ export default function Myy() {
             <li className="px-1 flex text-left items-center">
               <IoPhonePortraitOutline className="w-8 h-8 sm:w-7 sm:h-7 mr-3" />
               <span>
-                Ostamme tällä hetkellä vain <b>iPhone -puhelimia</b>.
+                Ostamme tällä hetkellä vain <b>iPhone-puhelimia</b>.
               </span>
             </li>
             <li className="px-3 lg:px-2 flex text-left items-center mt-1 lg:mt-2">
@@ -60,7 +60,7 @@ export default function Myy() {
             <div className="flex justify-center mt-5 mb-6">
               <div className="w-full lg:w-2/3">
                 <ul className="list-none">
-                  <li className="px-4 flex text-left flex-col lg:flex-row justify-between">
+                  <li className="px-4 flex text-left flex-col justify-between">
                     <span>- akun kunto</span>
                   <div className="text-sm">
                     <span>asetukset</span>
@@ -72,7 +72,7 @@ export default function Myy() {
                     <span>maksimikapasiteetti (x%)</span>
                   </div>
                   </li>
-                  <li className="px-4 flex flex-col lg:flex-row justify-between text-left mt-4 lg:mt-0">
+                  <li className="px-4 flex flex-col justify-between text-left mt-4 ">
                     <span>- muistikapasiteetti</span>
                     <div className="text-sm">
                       <span>asetukset</span>
@@ -84,11 +84,11 @@ export default function Myy() {
                       <span>muistikapasiteetti (xGB)</span>
                     </div>
                   </li>
-                  <li className="px-4 flex flex-col lg:flex-row justify-between text-left mt-4 lg:mt-0">
+                  <li className="px-4 flex flex-col justify-between text-left mt-4">
                     <span>- ulkoinen kunto</span>
                     <span className="text-sm">liitä kuvat edestä, takaa ja sivuilta</span>
                   </li>
-                  <li className="px-4 flex flex-col lg:flex-row justify-between text-left mt-4 lg:mt-0">
+                  <li className="px-4 flex flex-col justify-between text-left mt-4 ">
                     <span>- toimivuus</span>
                     <span className="text-sm">toimiiko kaikki kuten pitää? jos ei, mikä ei toimi ja miten?</span>
                   </li>
@@ -97,7 +97,11 @@ export default function Myy() {
             </div>
           </div>
         </div>
-        <CustomButton title={"MYY PUHELIMESI"} otherStyles={"mt-10 lg:mb-0 mb-14"} onPress={openTakeContact} />
+        <CustomButton 
+          title={"MYY PUHELIMESI"} 
+          otherStyles={"mt-10 mb-14"} 
+          onPress={openTakeContact} 
+        />
       </div>
       {isTakeContactOpen && (
         <TakeContact
