@@ -86,7 +86,7 @@ export default function NavbarMenu() {
           </NavbarItem>
           <NavbarItem className="lg:flex">
             <Link
-              href="https://www.tiktok.com/retelephones/"
+              href="https://www.tiktok.com/@retelephones/"
               isExternal
               className="text-current"
             >
