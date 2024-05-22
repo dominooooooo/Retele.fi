@@ -17,9 +17,9 @@ export async function GET(request) {
 
     const combinedData = {
       product: productResponse,
-      price: priceResponse.data[0], // Assuming there's at least one price
+      price: priceResponse.data[0],
     };
-    console.log(combinedData)
+
     return NextResponse.json(combinedData);
   } catch (error) {
     console.error("Error fetching product details:", error);
