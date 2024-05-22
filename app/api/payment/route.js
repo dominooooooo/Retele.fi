@@ -15,12 +15,13 @@ export async function POST(request) {
         },
       ],
       mode: "payment",
-      return_url: `${request.headers.origin}/return?session_id={CHECKOUT_SESSION_ID}`,
+      return_url: `${request.headers.get('origin')}/kassa/{CHECKOUT_SESSION_ID}`,
       automatic_tax: { enabled: true },
     });
 
-    return NextResponse.json({ sessionId: session.id, client_secret: session.client_secret });
+    return NextResponse.json({ sessionId: session.id });
   } catch (error) {
+    console.error("Error creating Stripe checkout session:", error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }

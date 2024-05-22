@@ -6,7 +6,7 @@ export async function GET(req) {
 
   try {
     const pricesResponse = await stripe.prices.list({});
-    const productsResponse = await stripe.products.list({});
+    const productsResponse = await stripe.products.list({ active: true });
 
     const prices = pricesResponse.data;
     const products = productsResponse.data;

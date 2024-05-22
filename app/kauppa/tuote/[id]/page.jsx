@@ -1,9 +1,9 @@
 "use client";
 
-import { useParams, useRouter } from 'next/navigation';
+import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Image, Button, Breadcrumbs, BreadcrumbItem } from "@nextui-org/react";
+import { Image, Button } from "@nextui-org/react";
 
 const ProductDetail = () => {
   const [product, setProduct] = useState({});
@@ -30,11 +30,10 @@ const ProductDetail = () => {
 
   const handlePurchase = async () => {
     try {
-      const { data } = await axios.post('/api/payment', {
+      const { data } = await axios.post("/api/payment", {
         priceId: price.id,
       });
-      // Navigate to the checkout page with the necessary data
-      router.push(`/kassa?session_id=${data.sessionId}`);
+      router.push(`/kauppa/tuote/${id}/kassa/${data.sessionId}`);
     } catch (error) {
       console.error("Error creating checkout session:", error);
     }
@@ -42,10 +41,6 @@ const ProductDetail = () => {
 
   return (
     <>
-      <Breadcrumbs className="ml-5 mt-2">
-        <BreadcrumbItem href="/kauppa">Kauppa</BreadcrumbItem>
-        <BreadcrumbItem href={`/kauppa/tuote/${product.id}`}>{product.name}</BreadcrumbItem>
-      </Breadcrumbs>
       <div className="flex flex-col sm:flex-row items-center sm:items-start max-w-[1040px] mx-auto mt-12">
         <div className="w-full sm:w-1/2">
           {Array.isArray(product.images) && product.images.length > 0 ? (
