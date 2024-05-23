@@ -15,6 +15,9 @@ export async function POST(request) {
         },
       ],
       mode: "payment",
+      shipping_address_collection: {
+        allowed_countries: ['US', 'CA'], 
+      },
       return_url: `${request.headers.get('origin')}/kassa/{CHECKOUT_SESSION_ID}`,
       automatic_tax: { enabled: true },
     });
