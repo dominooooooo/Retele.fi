@@ -60,7 +60,7 @@ function AskForPhone() {
           <p className="font-bold text-xl">Tietty iPhone-malli etsinnässä?</p>
           <p>
             Jätä yhteystietosi alas, niin otamme heti yhteyttä kun haluamasi
-            malli on saatavilla, sekä nopeutamme etsintöjämme.
+            malli on saatavilla.
           </p>
         </div>
         <div className="flex flex-col justify-center items-center mt-3 space-y-2">

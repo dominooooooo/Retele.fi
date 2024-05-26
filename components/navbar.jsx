@@ -15,7 +15,7 @@ export default function NavbarMenu() {
     { name: "MYY", route: "/myy" },
   ];
 
-  const isActive = (route) => pathname === route;
+  const isActive = (route) => pathname.includes(route);
 
   return (
     <>

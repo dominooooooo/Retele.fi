@@ -14,12 +14,67 @@ export async function POST(request) {
           quantity: 1,
         },
       ],
+      shipping_options: [
+        {
+          shipping_rate_data: {
+            type: 'fixed_amount',
+            fixed_amount: {
+              amount: 500,
+              currency: 'eur',
+            },
+            display_name: 'Matkahuolto',
+            delivery_estimate: {
+              minimum: {
+                unit: 'business_day',
+                value: 1,
+              },
+              maximum: {
+                unit: 'business_day',
+                value: 3,
+              },
+            },
+          },
+        },
+        {
+          shipping_rate_data: {
+            type: 'fixed_amount',
+            fixed_amount: {
+              amount: 0,
+              currency: 'eur',
+            },
+            display_name: 'Kotiinkuljetus (huom. vain Porin alue!)',
+            delivery_estimate: {
+              minimum: {
+                unit: 'day',
+                value: 1,
+              },
+              maximum: {
+                unit: 'day',
+                value: 1,
+              },
+            },
+          },
+        },
+      ],
       mode: "payment",
       shipping_address_collection: {
-        allowed_countries: ['US', 'CA'], 
+        allowed_countries: ['FI'], 
       },
-      return_url: `${request.headers.get('origin')}/kassa/{CHECKOUT_SESSION_ID}`,
-      automatic_tax: { enabled: true },
+      phone_number_collection: {
+        enabled: true,
+      },
+      custom_text: {
+        terms_of_service_acceptance: {
+          message: 'Hyväksyn [Toimitusehdot](https://retele.fi/maksutavatjatoimitus)',
+        },
+      },
+      consent_collection: {
+        terms_of_service: 'required',
+      },
+      locale: "fi",
+      allow_promotion_codes: true,
+      return_url: `${request.headers.get('origin')}/kauppa/tilausvahvistus/{CHECKOUT_SESSION_ID}`,
+      // automatic_tax: { enabled: true },
     });
 
     return NextResponse.json({ sessionId: session.id });

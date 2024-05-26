@@ -1,3 +1,4 @@
+// components/ProductDetail.js
 "use client";
 
 import { useParams, useRouter } from "next/navigation";
@@ -43,8 +44,8 @@ const ProductDetail = () => {
     <>
       <div className="flex flex-col sm:flex-row items-center sm:items-start max-w-[1040px] mx-auto mt-12">
         <div className="w-full sm:w-1/2">
-          {Array.isArray(product.images) && product.images.length > 0 ? (
-            product.images.map((image, index) => (
+          {Array.isArray(product.metadata?.images) && product.metadata.images.length > 0 ? (
+            product.metadata.images.map((image, index) => (
               <Image
                 key={index}
                 shadow="sm"

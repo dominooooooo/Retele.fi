@@ -8,11 +8,11 @@ import { EmbeddedCheckoutProvider, EmbeddedCheckout } from '@stripe/react-stripe
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
 
 export default function Checkout() {
-  const { session_id } = useParams();
+  const { pay_id } = useParams();
 
   const fetchClientSecret = useCallback(async () => {
     try {
-      const res = await fetch(`/api/payment_intent?session_id=${session_id}`, {
+      const res = await fetch(`/api/payment_intent?session_id=${pay_id}`, {
         method: "GET",
       });
       const data = await res.json();
@@ -25,7 +25,7 @@ export default function Checkout() {
       console.error("Error fetching client secret:", error);
       throw new Error("Failed to fetch client secret");
     }
-  }, [session_id]);
+  }, [pay_id]);
 
   const options = { fetchClientSecret };
 
