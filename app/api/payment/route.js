@@ -71,13 +71,32 @@ export async function POST(request) {
       consent_collection: {
         terms_of_service: 'required',
       },
+      invoice_creation: {
+        enabled: true,
+        invoice_data: {
+          description: 'Invoice for Product X',
+          metadata: {
+            order: 'order-xyz',
+          },
+          custom_fields: [
+            {
+              name: 'Purchase Order',
+              value: 'PO-XYZ',
+            },
+          ],
+          rendering_options: {
+            amount_tax_display: 'include_inclusive_tax',
+          },
+          footer: 'B2B Inc.',
+        },
+      },
       locale: "fi",
       allow_promotion_codes: true,
       return_url: `${request.headers.get('origin')}/kauppa/tilausvahvistus/{CHECKOUT_SESSION_ID}`,
       // automatic_tax: { enabled: true },
     });
 
-    return NextResponse.json({ sessionId: session.id });
+    return NextResponse.json({ sessionId: session.id, status: session.status, customer_email: session.customer_email });
   } catch (error) {
     console.error("Error creating Stripe checkout session:", error);
     return NextResponse.json({ error: error.message }, { status: 500 });

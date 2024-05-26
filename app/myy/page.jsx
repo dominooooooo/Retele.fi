@@ -1,9 +1,9 @@
 "use client"
 
 import { useState } from "react";
-import CustomButton from "@/components/CustomButton";
 import { FaInfo } from "react-icons/fa6";
 import TakeContact from "@/components/TakeContact";
+import { Button } from "@nextui-org/react";
 import { IoPhonePortraitOutline } from "react-icons/io5";
 import { FaCheck } from "react-icons/fa";
 
@@ -38,7 +38,7 @@ export default function Myy() {
         <div className="mt-10 lg:mx-96">
           <p className="text-center">
             Kysy myynnistä painamalla
-            alla painiketta "MYY PUHELIMESI" ja ota yhteyttä.{" "}
+            alla painiketta "Myy puhelimesi" ja ota yhteyttä.{" "}
             <b>
               Vastaamme kaikkiin yhteydenottoihin 
               klo 12-22 välillä tunnin kuluessa ja saat hinnan, jonka voimme puhelimestasi maksaa!
@@ -97,11 +97,9 @@ export default function Myy() {
             </div>
           </div>
         </div>
-        <CustomButton 
-          title={"MYY PUHELIMESI"} 
-          otherStyles={"mt-10 mb-14"} 
-          onPress={openTakeContact} 
-        />
+        <Button className="mt-10 mb-14" onClick={openTakeContact} size="lg">
+          Myy puhelimesi
+        </Button>
       </div>
       {isTakeContactOpen && (
         <TakeContact

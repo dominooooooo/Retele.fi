@@ -1,15 +1,21 @@
-// components/ProductDetail.js
 "use client";
 
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Image, Button } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
+import { useProduct } from "@/contexts/ProductContext";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 
 const ProductDetail = () => {
-  const [product, setProduct] = useState({});
+  const { setProduct } = useProduct();
+  const [product, setLocalProduct] = useState({});
   const [price, setPrice] = useState({});
-
   const { id } = useParams();
   const router = useRouter();
 
@@ -18,8 +24,9 @@ const ProductDetail = () => {
       const fetchProductDetails = async () => {
         try {
           const { data } = await axios.get(`/api/getProductDetails?id=${id}`);
-          setProduct(data.product);
+          setLocalProduct(data.product);
           setPrice(data.price);
+          setProduct(data.product);
         } catch (error) {
           console.error("Error fetching product details:", error);
         }
@@ -27,7 +34,7 @@ const ProductDetail = () => {
 
       fetchProductDetails();
     }
-  }, [id]);
+  }, [id, setProduct]);
 
   const handlePurchase = async () => {
     try {
@@ -40,31 +47,58 @@ const ProductDetail = () => {
     }
   };
 
+  const images = Object.keys(product.metadata || {})
+    .filter(key => key.startsWith("img"))
+    .sort((a, b) => a.localeCompare(b)) // Ensure the images are sorted by img1, img2, etc.
+    .map(key => product.metadata[key]);
+
   return (
     <>
       <div className="flex flex-col sm:flex-row items-center sm:items-start max-w-[1040px] mx-auto mt-12">
         <div className="w-full sm:w-1/2">
-          {Array.isArray(product.metadata?.images) && product.metadata.images.length > 0 ? (
-            product.metadata.images.map((image, index) => (
-              <Image
-                key={index}
-                shadow="sm"
-                radius="lg"
-                width="100%"
-                alt={`${product.name} image ${index + 1}`}
-                className="w-full object-cover mb-4"
-                src={image}
-              />
-            ))
-          ) : (
-            <p>No images available</p>
+          {images.length > 0 && (
+            <>
+              {/* Swiper for mobile */}
+              <div className="block sm:hidden">
+                <Swiper
+                  modules={[Pagination]}
+                  pagination={{
+                    clickable: true,
+                  }}
+                >
+                  {images.map((img, index) => (
+                    <SwiperSlide key={index}>
+                      <Zoom>
+                        <img
+                          src={img}
+                          alt={`${product.name} image ${index + 1}`}
+                          className="w-full object-cover cursor-pointer"
+                        />
+                      </Zoom>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+              {/* Grid for desktop */}
+              <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-2">
+                {images.map((img, index) => (
+                  <Zoom key={index}>
+                    <img
+                      src={img}
+                      alt={`${product.name} image ${index + 1}`}
+                      className="w-full object-cover cursor-pointer"
+                    />
+                  </Zoom>
+                ))}
+              </div>
+            </>
           )}
         </div>
-        <div className="w-full sm:w-1/2 sm:pl-8 mt-8 sm:mt-0">
+        <div className="w-full sm:w-1/2 sm:pl-8 pl-12 mt-8 sm:mt-0 mb-12">
           <h1 className="font-black text-2xl">{product.name}</h1>
           <p className="my-4">{product.description}</p>
           <p className="text-xl font-bold mb-4">{price.unit_amount / 100}€</p>
-          <Button onClick={handlePurchase}>Osta</Button>
+          <Button size="lg" onClick={handlePurchase}>Osta</Button>
         </div>
       </div>
     </>

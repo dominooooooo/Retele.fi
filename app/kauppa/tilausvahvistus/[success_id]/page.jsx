@@ -7,10 +7,11 @@ export default function Return() {
   const [status, setStatus] = useState(null);
   const [customerEmail, setCustomerEmail] = useState("");
   const searchParams = useSearchParams();
-  const sessionId = searchParams.get("session_id");
+  const sessionId = searchParams.get("buy_id");
   const router = useRouter();
 
   useEffect(() => {
+    console.log("Session ID from URL:", searchParams); // Add this line
     if (sessionId) {
       console.log("Fetching session details for ID:", sessionId);
       fetch(`/api/payment_intent?session_id=${sessionId}`, {

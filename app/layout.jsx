@@ -1,13 +1,13 @@
-import NavbarMenu from "@/components/navbar";
-import Footer from "@/components/footer";
-import "@/styles/globals.css"
-import TopMarguee from "@/components/Marquee";
-import { League_Spartan } from 'next/font/google'
+import NavbarMenu from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import "@/styles/globals.css";
+import { League_Spartan } from 'next/font/google';
+import { ProductProvider } from '@/contexts/ProductContext';
 
 const leaguespartan = League_Spartan({
   subsets: ['latin'],
   display: 'swap',
-})
+});
 
 export const metadata = {
   title: "RETELE — huolla & osta puhelin",
@@ -22,9 +22,11 @@ export default function RootLayout({ children }) {
       </head>
       <body style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
         <NavbarMenu />
-        <main style={{ flex: "1 0 auto" }}>
-          {children}
-        </main>
+        <ProductProvider>
+          <main style={{ flex: "1 0 auto" }}>
+            {children}
+          </main>
+        </ProductProvider>
         <Footer />
       </body>
     </html>
