@@ -10,8 +10,8 @@ const leaguespartan = League_Spartan({
 });
 
 export const metadata = {
-  title: "RETELE — huolla & osta puhelin",
-  description: "Tingi huomattavasti hinnassa, mutta älä laadussa",
+  title: "RETELE — puhelinhuolto & puhelinkauppa",
+  description: "Puhelinhuolto ja puhelinkauppa, jossa tingit huomattavasti hinnassa, mutta et laadussa.",
 };
 
 export default function RootLayout({ children }) {
