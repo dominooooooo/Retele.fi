@@ -16,8 +16,7 @@ export default function Home() {
         <p className="text-center italic text-wrap mx-4 lg:mx-96">
           "Retele on vuonna 2023 perustettu yritys, joka huoltaa, ostaa sekä
           myy puhelimia. Yrityksen perusti 16-vuotias porilainen, joka hoitaa yrityksen asioita edelleen itse. 
-          Retele huoltaa, myy ja ostaa tällä hetkellä vain iPhone
-          -puhelimia. Kiva, että pääsit tänne asti!"
+          Retele huoltaa, myy ja ostaa tällä hetkellä vain iPhone-puhelimia. Kiva, että pääsit tänne asti!"
         </p>
         <div className="flex justify-center mt-10">
           <div className="border-2 border-black border-dashed rounded-2xl p-4 relative">

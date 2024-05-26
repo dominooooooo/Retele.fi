@@ -47,7 +47,6 @@ export default function NavbarMenu() {
               draggable="false"
               alt="ReteleLogo"
               width={150}
-              height={150}
             />
           </Link>
         </NavbarBrand>
@@ -71,7 +70,6 @@ export default function NavbarMenu() {
                 draggable="false"
                 alt="ReteleLogo"
                 width={200}
-                height={200}
               />
             </Link>
           </NavbarBrand>
@@ -88,7 +86,7 @@ export default function NavbarMenu() {
           </NavbarItem>
           <NavbarItem className="lg:flex">
             <Link
-              href="https://www.tiktok.com/retelephones/"
+              href="https://www.tiktok.com/@retelephones/"
               isExternal
               className="text-current"
             >
