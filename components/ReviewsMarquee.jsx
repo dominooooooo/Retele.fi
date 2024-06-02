@@ -43,7 +43,7 @@ const ReviewsMarquee = () => {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="w-full lg:w-2/3">
+      <div className="w-full lg:w-2/4">
 
       <Marquee speed={40}>
         <div className="flex">

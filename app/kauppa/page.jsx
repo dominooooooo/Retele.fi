@@ -29,6 +29,20 @@ export default function Shop() {
     }
   };
 
+  const renderPlaceholders = (count) => {
+    const placeholders = [];
+    for (let i = 0; i < count; i++) {
+      placeholders.push(
+        <div key={`placeholder-${i}`} className="bg-gray-50 h-52 flex justify-center items-center rounded-2xl">
+        </div>
+      );
+    }
+    return placeholders;
+  };
+
+  const productsPerRow = 4;
+  const remainingSpots = productsPerRow - (products.length % productsPerRow);
+
   return (
     <>
       <div className="font-black text-2xl text-center mt-12">KAUPPA</div>
@@ -38,7 +52,7 @@ export default function Shop() {
           <Image unoptimized src="/loading.gif" alt="Loading" width={160} height={160} />
         </div>
       ) : (
-        <div className="px-3 sm:px-0 grid grid-cols-2 sm:grid-cols-5 gap-3 sm:gap-5 max-w-[1040px] items-center mx-auto mt-8">
+        <div className="px-3 sm:px-0 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-5 max-w-[1040px] items-center mx-auto mt-8">
           {products.map((product) => {
             const productPrice = prices.find(
               (price) => price.product === product.id
@@ -51,6 +65,7 @@ export default function Shop() {
               />
             );
           })}
+          {remainingSpots < productsPerRow && renderPlaceholders(remainingSpots)}
         </div>
       )}
       <div className="flex justify-center items-center my-12 mx-auto max-w-xs">

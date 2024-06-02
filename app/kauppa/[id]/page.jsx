@@ -3,7 +3,7 @@
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Button } from "@nextui-org/react";
+import { Button, Skeleton } from "@nextui-org/react";
 import { useProduct } from "@/contexts/ProductContext";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper';
@@ -16,6 +16,7 @@ const ProductDetail = () => {
   const { setProduct } = useProduct();
   const [product, setLocalProduct] = useState({});
   const [price, setPrice] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
   const router = useRouter();
 
@@ -29,6 +30,8 @@ const ProductDetail = () => {
           setProduct(data.product);
         } catch (error) {
           console.error("Error fetching product details:", error);
+        } finally {
+          setIsLoading(false); // Set loading to false after data is fetched
         }
       };
 
@@ -56,49 +59,64 @@ const ProductDetail = () => {
     <>
       <div className="flex flex-col sm:flex-row items-center sm:items-start max-w-[1040px] mx-auto mt-12">
         <div className="w-full sm:w-1/2">
-          {images.length > 0 && (
-            <>
-              {/* Swiper for mobile */}
-              <div className="block sm:hidden">
-                <Swiper
-                  modules={[Pagination]}
-                  pagination={{
-                    clickable: true,
-                  }}
-                >
+          {isLoading ? (
+            <Skeleton className="w-full h-96 rounded-2xl" />
+          ) : (
+            images.length > 0 && (
+              <>
+                {/* Swiper for mobile */}
+                <div className="block sm:hidden">
+                  <Swiper
+                    modules={[Pagination]}
+                    pagination={{
+                      clickable: true,
+                    }}
+                  >
+                    {images.map((img, index) => (
+                      <SwiperSlide key={index}>
+                        <Zoom>
+                          <img
+                            src={img}
+                            alt={`${product.name} image ${index + 1}`}
+                            className="w-full object-cover cursor-pointer"
+                          />
+                        </Zoom>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </div>
+                {/* Grid for desktop */}
+                <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-2">
                   {images.map((img, index) => (
-                    <SwiperSlide key={index}>
-                      <Zoom>
-                        <img
-                          src={img}
-                          alt={`${product.name} image ${index + 1}`}
-                          className="w-full object-cover cursor-pointer"
-                        />
-                      </Zoom>
-                    </SwiperSlide>
+                    <Zoom key={index}>
+                      <img
+                        src={img}
+                        alt={`${product.name} image ${index + 1}`}
+                        className="w-full object-cover cursor-pointer"
+                      />
+                    </Zoom>
                   ))}
-                </Swiper>
-              </div>
-              {/* Grid for desktop */}
-              <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-2">
-                {images.map((img, index) => (
-                  <Zoom key={index}>
-                    <img
-                      src={img}
-                      alt={`${product.name} image ${index + 1}`}
-                      className="w-full object-cover cursor-pointer"
-                    />
-                  </Zoom>
-                ))}
-              </div>
-            </>
+                </div>
+              </>
+            )
           )}
         </div>
         <div className="w-full sm:w-1/2 sm:pl-8 pl-12 mt-8 sm:mt-0 mb-12">
-          <h1 className="font-black text-2xl">{product.name}</h1>
-          <p className="my-4">{product.description}</p>
-          <p className="text-xl font-bold mb-4">{price.unit_amount / 100}€</p>
-          <Button size="lg" onClick={handlePurchase}>Osta</Button>
+          {isLoading ? (
+            <>
+              <Skeleton className="w-3/4 h-10 rounded-full" />
+              <Skeleton className="w-full h-20 rounded-full my-4" />
+              <Skeleton className="w-1/4 h-10 rounded-full mb-4" /> 
+              <Skeleton className="w-32 h-12 rounded-full" />
+            </>
+          ) : (
+            <>
+              <h1 className="font-black text-2xl">{product.name}</h1>
+              <p className="my-4">{product.description}</p>
+              <p className="text-xl font-bold mb-4">{price.unit_amount / 100}€</p>
+              <Button size="lg" onClick={handlePurchase}>Osta</Button>
+            </>
+          )}
         </div>
       </div>
     </>

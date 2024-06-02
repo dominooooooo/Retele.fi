@@ -8,23 +8,28 @@ export default function ShopLayout({ children }) {
   const pathname = usePathname();
   const { product } = useProduct();
 
+  const pathSegments = pathname.split('/').filter(segment => segment);
+
   return (
     <section>
       <Breadcrumbs className="ml-5 mt-2">
-        {(pathname.includes("tuote") || pathname.includes("tilausvahvistus")) && (
+        {pathSegments.length > 1 && pathSegments[1].startsWith('prod_') && (
           <BreadcrumbItem href="/kauppa">Kauppa</BreadcrumbItem>
         )}
-        {(pathname.includes("tuote") && product) && (
-          <BreadcrumbItem href={`/kauppa/tuote/${product.id}`}>
-            {product.name}
+
+        {pathSegments.length > 1 && pathSegments[1].startsWith('prod_') && (
+          <BreadcrumbItem href={`/kauppa/tuote/${pathSegments[1]}`}>
+            {product ? product.name : ''}
           </BreadcrumbItem>
         )}
-        {(pathname.includes("kassa") || pathname.includes("tilausvahvistus")) && (
+
+        {pathSegments.length > 1 && pathSegments[1].startsWith('cs_') && (
           <BreadcrumbItem>
             Tilaus
           </BreadcrumbItem>
         )}
-        {pathname.includes("tilausvahvistus") && (
+
+        {pathSegments.includes('tilausvahvistus') && (
           <BreadcrumbItem>
             Tilausvahvistus
           </BreadcrumbItem>

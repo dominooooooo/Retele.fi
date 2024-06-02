@@ -13,13 +13,13 @@ export default function Home() {
   return (
     <>
       <div className="mt-10">
-        <p className="text-center italic text-wrap mx-4 lg:mx-96">
+        <p className="text-center text-lg italic text-wrap mx-4 lg:mx-144">
           "Retele on vuonna 2023 perustettu yritys, joka huoltaa, ostaa sekä
-          myy puhelimia. Yrityksen perusti 16-vuotias porilainen, joka hoitaa yrityksen asioita edelleen itse. 
-          Retele huoltaa, myy ja ostaa tällä hetkellä vain iPhone-puhelimia. Kiva, että pääsit tänne asti!"
+          myy puhelimia. Yrityksen perusti intohimoinen 16-vuotias porilainen, joka hoitaa yrityksen asioita edelleen yksinään. 
+          Retele huoltaa, myy ja ostaa tällä hetkellä vain iPhone-puhelimia. On ilo nähdä sinut täällä!"
         </p>
         <div className="flex justify-center mt-10">
-          <div className="border-2 border-black border-dashed rounded-2xl p-4 relative">
+          <div className="border-2 border-black border-dashed rounded-2xl p-8 sm:p-4 relative">
             <div className="absolute -top-5 left-2 transform -translate-x-1/2 bg-white">
               <GiCheckMark className="w-10 h-10 text-[#37AB07]" />
             </div>
@@ -82,14 +82,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex flex-row mt-10 justify-center gap-2 lg:gap-12">
+        <div className="flex flex-row mt-10 justify-center gap-2 lg:gap-20">
           <CustomCard title={"Osta"} image={Buy} link={"/kauppa"} />
           <CustomCard title={"Huolla"} image={Fix} link={"/huolla"} />
           <CustomCard title={"Myy"} image={Sell} link={"/myy"} />
         </div>
-        {/* <div className="flex w-full justify-start items-center mt-10">
-          <p className="font-bold text-2xl ml-4 sm:ml-8 md:ml-16 lg:ml-96">Ajankohtaista</p>
-        </div> */}
         <div className="mt-12">
           <p className="text-center font-bold text-2xl">Asiakaskokemuksia</p>
             <p className="text-center">Lue kaikki arvostelumme <Link isExternal href="https://fi.trustpilot.com/review/retele.fi" underline="always" className="cursor-pointer">täältä</Link></p>
