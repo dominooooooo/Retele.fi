@@ -5,7 +5,7 @@ const ProductCard = ({ product, price }) => {
   const router = useRouter();
 
   const handleNavigation = () => {
-    router.push(`/kauppa/tuote/${product.id}`);
+    router.push(`/kauppa/${product.id}`);
   };
 
   return (

@@ -41,7 +41,7 @@ const ProductDetail = () => {
       const { data } = await axios.post("/api/payment", {
         priceId: price.id,
       });
-      router.push(`/kauppa/tuote/${id}/kassa/${data.sessionId}`);
+      router.push(`/kauppa/${id}/${data.sessionId}`);
     } catch (error) {
       console.error("Error creating checkout session:", error);
     }
