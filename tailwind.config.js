@@ -9,8 +9,16 @@ module.exports = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    theme: {
-      extend: {},
+    extend: {
+      spacing: {
+        '128': '32rem', // 128 * 0.25rem = 32rem
+        '144': '36rem', // 144 * 0.25rem = 36rem
+      },
+    },
+  },
+  variants: {
+    extend: {
+      margin: ['responsive'],
     },
   },
   darkMode: "class",
