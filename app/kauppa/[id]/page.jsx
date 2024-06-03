@@ -3,14 +3,24 @@
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Button, Skeleton } from "@nextui-org/react";
+import {
+  Button,
+  Skeleton,
+  Link,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+} from "@nextui-org/react";
 import { useProduct } from "@/contexts/ProductContext";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import Zoom from 'react-medium-image-zoom';
-import 'react-medium-image-zoom/dist/styles.css';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
+import { BiMemoryCard } from "react-icons/bi";
+import { IoBatteryFull } from "react-icons/io5";
+import { CiCircleInfo } from "react-icons/ci";
 
 const ProductDetail = () => {
   const { setProduct } = useProduct();
@@ -51,9 +61,20 @@ const ProductDetail = () => {
   };
 
   const images = Object.keys(product.metadata || {})
-    .filter(key => key.startsWith("img"))
+    .filter((key) => key.startsWith("img"))
     .sort((a, b) => a.localeCompare(b)) // Ensure the images are sorted by img1, img2, etc.
-    .map(key => product.metadata[key]);
+    .map((key) => product.metadata[key]);
+
+  const getIconForFeature = (index) => {
+    switch (index) {
+      case 0:
+        return <BiMemoryCard className="mr-2" />;
+      case 1:
+        return <IoBatteryFull className="mr-2" />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <>
@@ -104,17 +125,56 @@ const ProductDetail = () => {
         <div className="w-full sm:w-1/2 sm:pl-8 pl-12 mt-8 sm:mt-0 mb-12">
           {isLoading ? (
             <>
-              <Skeleton className="w-3/4 h-10 rounded-full" />
-              <Skeleton className="w-full h-20 rounded-full my-4" />
-              <Skeleton className="w-1/4 h-10 rounded-full mb-4" /> 
-              <Skeleton className="w-32 h-12 rounded-full" />
+              <Skeleton className="w-3/4 h-10 rounded-2xl" />
+              <Skeleton className="w-full h-20 rounded-2xl my-4" />
+              <Skeleton className="w-1/4 h-10 rounded-2xl mb-4" />
+              <Skeleton className="w-32 h-12 rounded-2xl" />
             </>
           ) : (
             <>
               <h1 className="font-black text-2xl">{product.name}</h1>
               <p className="my-4">{product.description}</p>
-              <p className="text-xl font-bold mb-4">{price.unit_amount / 100}€</p>
-              <Button size="lg" onClick={handlePurchase}>Osta</Button>
+              <div className="flex flex-row items-center">
+                <p>Tekniset tiedot:</p>
+                <Popover placement="right">
+                  <PopoverTrigger>
+                    <Button isIconOnly variant="light" size="sm">
+                      <CiCircleInfo size={20} />
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent>
+                    <div className="px-1 py-2">
+                      <div className="text-sm flex items-center mb-1">
+                        <BiMemoryCard className="mr-2" /> kertoo
+                        muistikapasiteetin
+                      </div>
+                      <div className="text-sm flex items-center">
+                        <IoBatteryFull className="mr-2" /> kertoo akun kunnon
+                      </div>
+                    </div>
+                  </PopoverContent>
+                </Popover>
+              </div>
+              <div className="mb-5">
+                {product.marketing_features?.map((feature, index) => (
+                  <p key={index} className="flex items-center">
+                    {getIconForFeature(index)}
+                    {feature.name}
+                  </p>
+                ))}
+              </div>
+              <p className="text-xl font-bold mb-4">
+                {price.unit_amount / 100}€
+              </p>
+              <Button size="lg" onClick={handlePurchase}>
+                Osta
+              </Button>
+              <p className="mt-3 mb-10">
+                Jäikö jokin mietityttämään?{" "}
+                <Link href="https://fi.trustpilot.com/review/retele.fi">
+                  Kysy lisää
+                </Link>
+              </p>
             </>
           )}
         </div>

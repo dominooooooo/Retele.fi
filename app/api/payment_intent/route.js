@@ -10,9 +10,8 @@ export async function GET(req) {
     const session = await stripe.checkout.sessions.retrieve(sessionId);
 
     return NextResponse.json({
-      client_secret: session.client_secret,
       status: session.status,
-      customer_email: session.customer_email,
+      customer_email: session.customer_details.email,
     });
   } catch (error) {
     console.error("Error retrieving session:", error);

@@ -1,17 +1,24 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
+import Success from "@/public/checked.png";
 
 export default function Return() {
+  const pathname = usePathname();
   const [status, setStatus] = useState(null);
   const [customerEmail, setCustomerEmail] = useState("");
-  const searchParams = useSearchParams();
-  const sessionId = searchParams.get("buy_id");
   const router = useRouter();
 
+  const pathSegments = pathname.split("/").filter((segment) => segment);
+  const sessionId = pathSegments[pathSegments.length - 1];
+
+  console.log(sessionId);
+
   useEffect(() => {
-    console.log("Session ID from URL:", searchParams); // Add this line
+    console.log("Session ID from URL:", sessionId);
     if (sessionId) {
       console.log("Fetching session details for ID:", sessionId);
       fetch(`/api/payment_intent?session_id=${sessionId}`, {
@@ -42,11 +49,20 @@ export default function Return() {
 
   if (status === "complete") {
     return (
-      <div id="success">
-        <p>
-          We appreciate your business! A confirmation email will be sent to{" "}
-          {customerEmail}. If you have any questions, please email{" "}
-          <a href="mailto:orders@example.com">orders@example.com</a>.
+      <div id="success" className="flex flex-col items-center justify-center text-center mt-10">
+        <Image
+          src={Success}
+          width={90}
+          height={90}
+          className="lg:w-[120px] lg:h-[120px]"
+          draggable="false"
+          alt="ReteleLogo"
+        />
+        <p className="mt-7 text-lg text-wrap mx-4 lg:mx-144">
+          Suuri kiitos, että valitsit meidät! Tilaus on tehty onnistuneesti ja tilauksesi lähetetään mahdollisimman pian.{" "}
+          Lähetämme kuitin ja vahvistuksen vielä sinulle osoitteeseen{" "}
+          {customerEmail}. Jos sinulla on kysyttävää, ole yhteydessä{" "}
+          <a href="mailto:tuki@retele.fi">tuki@retele.fi</a>.
         </p>
       </div>
     );
