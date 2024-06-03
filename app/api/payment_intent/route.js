@@ -9,10 +9,19 @@ export async function GET(req) {
   try {
     const session = await stripe.checkout.sessions.retrieve(sessionId);
 
-    return NextResponse.json({
-      status: session.status,
-      customer_email: session.customer_details.email,
-    });
+    if (session.status === "complete") {
+      return NextResponse.json({
+        client_secret: session.client_secret,
+        status: session.status,
+        customer_email: session.customer_details.email,
+      });
+    } else {
+      return NextResponse.json({
+        client_secret: session.client_secret,
+        status: session.status,
+        message: "Session is not completed yet."
+      });
+    }
   } catch (error) {
     console.error("Error retrieving session:", error);
     return NextResponse.json({ error: error.message }, { status: 500 });

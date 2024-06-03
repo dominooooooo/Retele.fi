@@ -67,6 +67,4 @@ export default function Return() {
       </div>
     );
   }
-
-  return <div>Loading...</div>;
 }

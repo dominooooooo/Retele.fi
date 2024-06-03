@@ -145,11 +145,10 @@ const ProductDetail = () => {
                   <PopoverContent>
                     <div className="px-1 py-2">
                       <div className="text-sm flex items-center mb-1">
-                        <BiMemoryCard className="mr-2" /> kertoo
-                        muistikapasiteetin
+                        <BiMemoryCard className="mr-2" /> muistikapasiteetti
                       </div>
                       <div className="text-sm flex items-center">
-                        <IoBatteryFull className="mr-2" /> kertoo akun kunnon
+                        <IoBatteryFull className="mr-2" /> akun kunto
                       </div>
                     </div>
                   </PopoverContent>
