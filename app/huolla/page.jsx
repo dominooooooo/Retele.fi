@@ -121,7 +121,7 @@ export default function Korjauta() {
             </div>
           </div>
         </div>
-        <Button className="mt-10 mb-14" onClick={openTakeContact} size="lg">
+        <Button className="mt-10 mb-14 font-bold" onClick={openTakeContact} size="lg">
           Huolla puhelimesi
         </Button>
       </div>

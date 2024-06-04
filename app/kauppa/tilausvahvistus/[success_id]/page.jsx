@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import { usePathname } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
+import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import Success from "@/public/checked.png";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 export default function Return() {
   const pathname = usePathname();
@@ -14,8 +15,6 @@ export default function Return() {
 
   const pathSegments = pathname.split("/").filter((segment) => segment);
   const sessionId = pathSegments[pathSegments.length - 1];
-
-  console.log(sessionId);
 
   useEffect(() => {
     console.log("Session ID from URL:", sessionId);
@@ -47,6 +46,10 @@ export default function Return() {
     }
   }, [status, router]);
 
+  const handleHomeClick = () => {
+    router.push("/");
+  };
+
   if (status === "complete") {
     return (
       <div id="success" className="flex flex-col items-center justify-center text-center mt-10">
@@ -64,7 +67,10 @@ export default function Return() {
           {customerEmail}. Jos sinulla on kysyttävää, ole yhteydessä{" "}
           <a href="mailto:tuki@retele.fi">tuki@retele.fi</a>.
         </p>
+        <Button className="my-12" endContent={<FaArrowRightLong />} onClick={handleHomeClick}>Palaa etusivulle</Button>
       </div>
     );
   }
+
+  return null;
 }

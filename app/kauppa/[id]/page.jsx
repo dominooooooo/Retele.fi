@@ -21,14 +21,24 @@ import "react-medium-image-zoom/dist/styles.css";
 import { BiMemoryCard } from "react-icons/bi";
 import { IoBatteryFull } from "react-icons/io5";
 import { CiCircleInfo } from "react-icons/ci";
+import LeaveContact from "@/components/LeaveContact";
 
 const ProductDetail = () => {
   const { setProduct } = useProduct();
   const [product, setLocalProduct] = useState({});
+  const [isLeaveContactOpen, setIsLeaveContactOpen] = useState(false);
   const [price, setPrice] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
   const router = useRouter();
+
+  const openLeaveContact = () => {
+    setIsLeaveContactOpen(true);
+  };
+  const closeLeaveContact = () => {
+    setIsLeaveContactOpen(false);
+  };
+
 
   useEffect(() => {
     if (id) {
@@ -41,7 +51,7 @@ const ProductDetail = () => {
         } catch (error) {
           console.error("Error fetching product details:", error);
         } finally {
-          setIsLoading(false); // Set loading to false after data is fetched
+          setIsLoading(false);
         }
       };
 
@@ -165,12 +175,12 @@ const ProductDetail = () => {
               <p className="text-xl font-bold mb-4">
                 {price.unit_amount / 100}€
               </p>
-              <Button size="lg" onClick={handlePurchase}>
+              <Button size="lg" onClick={handlePurchase} className="font-bold">
                 Osta
               </Button>
-              <p className="mt-3 mb-10">
+              <p className="mt-3 mb-6">
                 Jäikö jokin mietityttämään?{" "}
-                <Link href="https://fi.trustpilot.com/review/retele.fi">
+                <Link className="cursor-pointer" onClick={openLeaveContact}>
                   Kysy lisää
                 </Link>
               </p>
@@ -178,6 +188,12 @@ const ProductDetail = () => {
           )}
         </div>
       </div>
+      {isLeaveContactOpen && (
+        <LeaveContact
+          isOpen={isLeaveContactOpen}
+          onClose={closeLeaveContact}
+        />
+      )}
     </>
   );
 };

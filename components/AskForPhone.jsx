@@ -33,7 +33,7 @@ function AskForPhone() {
       });
 
       if (response.ok) {
-        setSuccessMessage("Kiitos kiinnostuksestasi meihin!");
+        setSuccessMessage("Kiitos yhteydenotostasi!");
         // Clear the form
         setName("");
         setSelectedPhones([]);

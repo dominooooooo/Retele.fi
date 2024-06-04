@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { usePathname } from "next/navigation";
 import { Breadcrumbs, BreadcrumbItem } from "@nextui-org/react";
 import { useProduct } from "@/contexts/ProductContext";
-import Image from 'next/image'
 
 const fetchProductById = async (id) => {
   // Implement the API call to fetch product by ID
@@ -41,24 +40,27 @@ export default function ShopLayout({ children }) {
     pathSegments[2] &&
     pathSegments[2].startsWith("cs_");
 
+    const isConfirmationPath =
+    pathSegments.includes("tilausvahvistus")
+
   return (
     <section>
       {!loading && (
         <Breadcrumbs className="ml-5 mt-2">
-          {(isProductPath || pathSegments.includes("tilausvahvistus")) && (
+          {(isProductPath || isConfirmationPath) && (
             <BreadcrumbItem href="/kauppa">Kauppa</BreadcrumbItem>
           )}
 
-          {(isProductPath || isOrderPath || pathSegments.includes("tilausvahvistus")) && (
+          {(isProductPath || isOrderPath || isConfirmationPath) && (
             <BreadcrumbItem href={`/kauppa/${pathSegments[1]}`}>
               {product ? product.name : ""}
             </BreadcrumbItem>
           )}
 
-          {(isOrderPath || pathSegments.includes("tilausvahvistus")) && <BreadcrumbItem>Tilaus</BreadcrumbItem>}
+          {(isOrderPath || isConfirmationPath) && <BreadcrumbItem>Tilaus</BreadcrumbItem>}
 
-          {pathSegments.includes("tilausvahvistus") && (
-            <BreadcrumbItem>Tilausvahvistus</BreadcrumbItem>
+          {isConfirmationPath && (
+            <BreadcrumbItem>Vahvistus</BreadcrumbItem>
           )}
         </Breadcrumbs>
       )}
