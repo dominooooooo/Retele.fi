@@ -15,7 +15,7 @@ export default function NavbarMenu() {
     { name: "MYY", route: "/myy" },
   ];
 
-  const isActive = (route) => pathname === route;
+  const isActive = (route) => pathname.includes(route);
 
   return (
     <>
@@ -79,6 +79,7 @@ export default function NavbarMenu() {
             <Link
               href="https://www.instagram.com/retelephones/"
               isExternal
+              aria-label="Instagram"
               className="text-current"
             >
               <FaInstagram size={30} />
@@ -88,6 +89,7 @@ export default function NavbarMenu() {
             <Link
               href="https://www.tiktok.com/@retelephones/"
               isExternal
+              aria-label="TikTok"
               className="text-current"
             >
               <FaTiktok size={30} />

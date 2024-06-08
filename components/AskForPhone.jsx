@@ -33,7 +33,7 @@ function AskForPhone() {
       });
 
       if (response.ok) {
-        setSuccessMessage("Kiitos kiinnostuksestasi meihin!");
+        setSuccessMessage("Kiitos yhteydenotostasi!");
         // Clear the form
         setName("");
         setSelectedPhones([]);
@@ -59,8 +59,8 @@ function AskForPhone() {
         <div className="ml-5">
           <p className="font-bold text-xl">Tietty iPhone-malli etsinnässä?</p>
           <p>
-            Jätä yhteystietosi alas, niin otamme heti yhteyttä kun haluamasi
-            malli on saatavilla, sekä nopeutamme etsintöjämme.
+            Jätä yhteystietosi alas, niin otamme sinuun yhteyttä kun haluamasi
+            malli on saatavilla.
           </p>
         </div>
         <div className="flex flex-col justify-center items-center mt-3 space-y-2">

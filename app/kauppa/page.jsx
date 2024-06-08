@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import PricingCard from "@/components/productCard";
+import ProductCard from "@/components/ProductCard";
 import axios from "axios";
-import { Divider } from "@nextui-org/react";
+import { Divider, Link } from "@nextui-org/react";
 import Image from "next/image";
 import AskForPhone from "@/components/AskForPhone"
 
@@ -29,31 +29,45 @@ export default function Shop() {
     }
   };
 
+  const renderPlaceholders = (count) => {
+    const placeholders = [];
+    for (let i = 0; i < count; i++) {
+      placeholders.push(
+        <div key={`placeholder-${i}`} className="bg-gray-50 h-52 flex justify-center items-center rounded-2xl">
+        </div>
+      );
+    }
+    return placeholders;
+  };
+
+  const productsPerRow = 4;
+  const remainingSpots = productsPerRow - (products.length % productsPerRow);
+
   return (
     <>
       <div className="font-black text-2xl text-center mt-12">KAUPPA</div>
-
-      <p className="text-center mt-3">Puhelimia tulossa pian myyntiin!</p>
-      {/* {isLoading ? (
+      <p className="text-center mt-2">Käteismaksu ja puhelin vaihdossa onnistuu. <Link href="/maksutavatjatoimitus" className="cursor-pointer">Lue lisää.</Link></p>
+      {isLoading ? (
         <div className="flex justify-center items-center mt-8">
           <Image unoptimized src="/loading.gif" alt="Loading" width={160} height={160} />
         </div>
       ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-5 max-w-[1040px] items-center mx-auto mt-8">
+        <div className="px-3 sm:px-0 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-5 max-w-[1040px] items-center mx-auto mt-8">
           {products.map((product) => {
             const productPrice = prices.find(
               (price) => price.product === product.id
             );
             return (
-              <PricingCard
+              <ProductCard
                 key={product.id}
                 product={product}
                 price={productPrice}
               />
             );
           })}
+          {remainingSpots < productsPerRow && renderPlaceholders(remainingSpots)}
         </div>
-      )} */}
+      )}
       <div className="flex justify-center items-center my-12 mx-auto max-w-xs">
         <Divider orientation="horizontal" className="w-full" />
       </div>

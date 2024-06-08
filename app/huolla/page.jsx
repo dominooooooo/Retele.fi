@@ -1,11 +1,10 @@
-"use client";
+"use client"
 
 import { useState } from "react";
-import CustomButton from "@/components/CustomButton";
-import { IoPricetagOutline } from "react-icons/io5";
+import { IoPricetagOutline, IoLocationSharp } from "react-icons/io5";
+import { Button } from "@nextui-org/react";
 import { FiPlus } from "react-icons/fi";
 import TakeContact from "@/components/TakeContact";
-import { IoLocationSharp } from "react-icons/io5";
 import { BsMailbox2 } from "react-icons/bs";
 
 export default function Korjauta() {
@@ -38,7 +37,7 @@ export default function Korjauta() {
         </div>
         <div className="mt-10 lg:mx-96">
           <p className="text-center">
-            Kysy huollosta painamalla alla olevaa "HUOLLA PUHELIMESI"
+            Kysy huollosta painamalla alla olevaa "Huolla puhelimesi"
             -painiketta ja ota yhteyttä.{" "}
             <b>
               Vastaamme kaikkiin yhteydenottoihin klo 12-22 välillä tunnin
@@ -122,11 +121,9 @@ export default function Korjauta() {
             </div>
           </div>
         </div>
-        <CustomButton
-          title={"HUOLLA PUHELIMESI"}
-          otherStyles={"mt-10 mb-14"}
-          onPress={openTakeContact}
-        />
+        <Button className="mt-10 mb-14 font-bold" onClick={openTakeContact} size="lg">
+          Huolla puhelimesi
+        </Button>
       </div>
       {isTakeContactOpen && (
         <TakeContact
