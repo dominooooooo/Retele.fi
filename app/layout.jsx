@@ -1,5 +1,5 @@
-import NavbarMenu from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import NavbarMenu from "@/components/navbar";
+import Footer from "@/components/footer";
 import "@/styles/globals.css";
 import { League_Spartan } from 'next/font/google';
 import { ProductProvider } from '@/contexts/ProductContext';

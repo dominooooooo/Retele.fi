@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import ProductCard from "@/components/ProductCard";
+import ProductCard from "@/components/productCard";
 import axios from "axios";
 import { Divider, Link } from "@nextui-org/react";
 import Image from "next/image";
