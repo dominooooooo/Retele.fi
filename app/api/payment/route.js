@@ -71,26 +71,26 @@ export async function POST(request) {
       consent_collection: {
         terms_of_service: 'required',
       },
-      invoice_creation: {
-        enabled: true,
-        invoice_data: {
-          description: 'Invoice for Product X',
-          metadata: {
-            order: 'order-xyz',
-          },
-          custom_fields: [
-            {
-              name: 'Purchase Order',
-              value: 'PO-XYZ',
-            },
-          ],
-          rendering_options: {
-            amount_tax_display: 'include_inclusive_tax',
-          },
-          footer: 'Re.',
-        },
-      },
-      locale: "fi",
+      // invoice_creation: {
+      //   enabled: true,
+      //   invoice_data: {
+      //     description: 'Invoice for Product X',
+      //     metadata: {
+      //       order: 'order-xyz',
+      //     },
+      //     custom_fields: [
+      //       {
+      //         name: 'Purchase Order',
+      //         value: 'PO-XYZ',
+      //       },
+      //     ],
+      //     rendering_options: {
+      //       amount_tax_display: 'include_inclusive_tax',
+      //     },
+      //     footer: 'Re.',
+      //   },
+      // },
+      preferred_locales: ['fi-FI'],
       allow_promotion_codes: true,
       return_url: `${request.headers.get('origin')}/kauppa/tilausvahvistus/{CHECKOUT_SESSION_ID}`,
       // automatic_tax: { enabled: true },
