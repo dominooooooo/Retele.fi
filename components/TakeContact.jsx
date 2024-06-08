@@ -11,15 +11,15 @@ export default function TakeContact({ isOpen, onClose, title }) {
           </ModalHeader>
           <ModalBody>
             <b>
-              Vastaamme jokaiseen yhteydenottoon tunnissa klo 12-22 välillä!
+              Vastaamme jokaiseen yhteydenottoon saman päivän aikana!
             </b>
             <p>
               Ota yhteyttä,
             </p>
             <div className="flex flex-col">
-              <p>viestillä: <span>045 171 0668</span>,</p>
-              <p>Instagramissa: <Link isExternal href="https://instagram.com/retelephones">@retelephones</Link> tai</p>
-              <p>sähköpostilla: <Link isExternal href="mailto:tuki@retele.fi">tuki@retele.fi</Link></p>
+              <p>viestillä <span>045 171 0668</span>,</p>
+              <p>Instagramissa <Link isExternal href="https://instagram.com/retelephones">@retelephones</Link> tai</p>
+              <p>sähköpostilla <Link isExternal href="mailto:tuki@retele.fi">tuki@retele.fi</Link></p>
             </div>
           </ModalBody>
         </ModalContent>
