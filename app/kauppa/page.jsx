@@ -20,8 +20,8 @@ export default function Shop() {
     setIsLoading(true);
     try {
       const { data } = await axios.get("/api/getProducts");
-      setProducts(data.products);
-      setPrices(data.prices);
+      setProducts(data.products || []);
+      setPrices(data.prices || []);
     } catch (error) {
       console.error("Error fetching products and prices:", error);
     } finally {
