@@ -5,7 +5,7 @@ export async function GET(req) {
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
   try {
-    const pricesResponse = await stripe.prices.list({ active: true });
+    const pricesResponse = await stripe.prices.list();
     const productsResponse = await stripe.products.list({ active: true });
 
     const prices = pricesResponse.data;
