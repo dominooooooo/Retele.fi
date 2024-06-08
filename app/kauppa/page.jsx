@@ -12,10 +12,6 @@ export default function Shop() {
   const [prices, setPrices] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    fetchProductsAndPrices();
-  }, []);
-
   const fetchProductsAndPrices = async () => {
     setIsLoading(true);
     try {
@@ -28,6 +24,10 @@ export default function Shop() {
       setIsLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchProductsAndPrices();
+  }, []);
 
   const renderPlaceholders = (count) => {
     const placeholders = [];
