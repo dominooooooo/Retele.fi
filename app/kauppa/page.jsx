@@ -5,7 +5,7 @@ import ProductCard from "@/components/productCard";
 import axios from "axios";
 import { Divider, Link } from "@nextui-org/react";
 import Image from "next/image";
-import AskForPhone from "@/components/AskForPhone"
+import AskForPhone from "@/components/AskForPhone";
 
 export default function Shop() {
   const [products, setProducts] = useState([]);
@@ -19,9 +19,13 @@ export default function Shop() {
   const fetchProductsAndPrices = async () => {
     setIsLoading(true);
     try {
-      const { data } = await axios.get("/api/getProducts");
-      setProducts(data.products || []);
-      setPrices(data.prices || []);
+      const { data } = await axios.get("/api/getProducts", {
+        headers: {
+          'Cache-Control': 'no-cache'
+        }
+      });
+      setProducts(data.products);
+      setPrices(data.prices);
     } catch (error) {
       console.error("Error fetching products and prices:", error);
     } finally {
