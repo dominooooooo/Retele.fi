@@ -20,7 +20,7 @@ export default function Myy() {
   return (
     <>
       <div className="text-center mt-12">
-        <p className="font-black text-2xl">MYY PUHELIMESI</p>
+        <h1 className="font-black text-2xl">MYY PUHELIMESI</h1>
         <div className="mx-auto mt-2 max-w-screen-lg flex justify-center">
           <div className="w-full lg:w-2/3 mx-2">
             <li className="px-1 flex text-left items-center">
@@ -35,7 +35,7 @@ export default function Myy() {
             </li>
           </div>
         </div>
-        <div className="mt-10 lg:mx-96">
+        <div className="mt-10 mx-2 lg:mx-96">
           <p className="text-center">
             Kysy myynnistä painamalla
             alla painiketta "Myy puhelimesi" ja ota yhteyttä.{" "}

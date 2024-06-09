@@ -45,7 +45,7 @@ export default function Shop() {
 
   return (
     <>
-      <div className="font-black text-2xl text-center mt-12">KAUPPA</div>
+      <h1 className="font-black text-2xl text-center mt-12">KAUPPA</h1>
       <p className="text-center mt-2">
         Käteismaksu ja puhelin vaihdossa onnistuu.{" "}
         <Link href="/maksutavatjatoimitus" className="cursor-pointer">Lue lisää.</Link>

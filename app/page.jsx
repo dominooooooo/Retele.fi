@@ -13,11 +13,11 @@ export default function Home() {
   return (
     <>
       <div className="mt-10">
-        <p className="text-center text-lg italic text-wrap mx-4 lg:mx-144">
+        <h1 className="text-center text-lg italic text-wrap mx-4 lg:mx-144">
           "Retele on vuonna 2023 perustettu yritys, joka huoltaa, ostaa sekä
           myy puhelimia. Yrityksen perusti intohimoinen 16-vuotias porilainen, joka hoitaa yrityksen asioita edelleen yksinään. 
           On ilo nähdä sinut täällä!"
-        </p>
+        </h1>
         <div className="flex justify-center mt-10">
           <div className="border-2 border-black border-dashed rounded-2xl p-4 sm:p-4 relative">
             <div className="absolute -top-5 left-2 transform -translate-x-1/2 bg-white">

@@ -20,7 +20,7 @@ export default function Korjauta() {
   return (
     <>
       <div className="text-center mt-12">
-        <p className="font-black text-2xl">HUOLLA PUHELIMESI</p>
+        <h1 className="font-black text-2xl">HUOLLA PUHELIMESI</h1>
         <div className="mx-auto mt-2 max-w-screen-lg flex justify-center">
           <div className="w-full lg:w-2/3 mx-2">
             <li className="px-1 flex text-left items-center">
@@ -35,7 +35,7 @@ export default function Korjauta() {
             </li>
           </div>
         </div>
-        <div className="mt-10 lg:mx-96">
+        <div className="mt-10 mx-2 lg:mx-96">
           <p className="text-center">
             Kysy huollosta painamalla alla olevaa "Huolla puhelimesi"
             -painiketta ja ota yhteyttä.{" "}
