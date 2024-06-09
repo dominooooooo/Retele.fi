@@ -1,6 +1,8 @@
 import Stripe from "stripe";
 import { NextResponse } from "next/server";
 
+export const revalidate = 10;
+
 export async function GET(req) {
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
@@ -16,7 +18,7 @@ export async function GET(req) {
       products: products.reverse(),
     };
 
-    return NextResponse.json(combinedData);
+    return NextResponse.json(combinedData, { revalidate: 10 });
   } catch (error) {
     console.error("Error fetching prices and products:", error);
     return NextResponse.error(
