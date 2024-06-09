@@ -14,8 +14,8 @@ export async function GET(req) {
     const products = productsResponse.data;
 
     const combinedData = {
-      prices: prices.reverse(),
-      products: products.reverse(),
+      prices: prices,
+      products: products,
     };
 
     return NextResponse.json(combinedData, { revalidate: 60 });
