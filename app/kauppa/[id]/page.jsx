@@ -173,7 +173,7 @@ const ProductDetail = () => {
                 ))}
               </div>
               <p className="text-xl font-bold mb-4">
-                {price.unit_amount / 100}€
+              {(price.unit_amount / 100).toFixed(2)}€
               </p>
               <Button size="lg" onClick={handlePurchase} className="font-bold">
                 Osta

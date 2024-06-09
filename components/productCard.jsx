@@ -22,7 +22,7 @@ const ProductCard = ({ product, price }) => {
       </CardBody>
       <CardFooter className="text-small justify-between">
         <b>{product.name}</b>
-        <p>{price.unit_amount / 100}€</p>
+        <p>{(price.unit_amount / 100).toFixed(2)}€</p>
       </CardFooter>
     </Card>
   );
