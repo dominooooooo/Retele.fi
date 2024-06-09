@@ -90,6 +90,7 @@ export async function POST(request) {
       //     footer: 'Re.',
       //   },
       // },
+      locale: "fi",
       allow_promotion_codes: true,
       return_url: `${request.headers.get('origin')}/kauppa/tilausvahvistus/{CHECKOUT_SESSION_ID}`,
       // automatic_tax: { enabled: true },
