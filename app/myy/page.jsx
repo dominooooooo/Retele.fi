@@ -67,7 +67,7 @@ export default function Myy() {
                     <span className="font-bold text-gray-600 mx-1">-&gt;</span>
                     <span>akku</span>
                     <span className="font-bold text-gray-600 mx-1">-&gt;</span>
-                    <span>akun kunto lataus</span>
+                    <span>akun kunto & lataus</span>
                     <span className="font-bold text-gray-600 mx-1">-&gt;</span>
                     <span>maksimikapasiteetti (x%)</span>
                   </div>
